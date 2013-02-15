@@ -1,0 +1,25 @@
+Installation:
+=============
+
+1. copy the whole phenotype folder with all subfolders to your webserver
+2. point your webroot to the htdocs folder within that folder
+3. create an empty database
+4. access the webroot in your browser and follow the instructions on the screen
+
+
+Development:
+============
+
+To grant any user the right to access the configuration mode you must access the database, find your user
+in the table users and enter the value "1" in the field usr_su. The installation user (normally "starter")
+is already a superuser.
+
+You will find all your application files (templates, php classes) in the folder /_phenotype/application 
+outside the web folder.
+
+
+If you like Phenotype support us by telling the world and/or joining the community and help us with the development.
+
+Have fun
+
+Nils, Michel

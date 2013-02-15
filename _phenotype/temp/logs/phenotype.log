@@ -1,0 +1,402 @@
+84.178.43.232	19/Mar/2012 13:31:41 +0100	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.33.182	19/Mar/2012 16:00:40 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.33.182	19/Mar/2012 17:04:59 +0100	13	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT * FROM content_data WHERE con_id=1 AND dat_status=1 ORDER BY Array LIMIT 
+84.178.33.182	19/Mar/2012 17:13:20 +0100	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.33.182	19/Mar/2012 17:13:20 +0100	13	SYSTEM	INFO	Snapshot 1 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.33.182	19/Mar/2012 17:13:24 +0100	13	SYSTEM	INFO	Datensatz 1001 (Content-Type 1) bearbeitet.
+84.178.33.182	19/Mar/2012 17:13:24 +0100	13	SYSTEM	INFO	Snapshot 2 zu Datensatz 1001 (Content-Type 1) erstellt.
+84.178.33.182	19/Mar/2012 17:33:19 +0100	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.33.182	19/Mar/2012 17:33:19 +0100	13	SYSTEM	INFO	Snapshot 3 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.33.182	19/Mar/2012 17:33:26 +0100	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.33.182	19/Mar/2012 17:33:26 +0100	13	SYSTEM	INFO	Snapshot 4 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.33.182	20/Mar/2012 09:09:47 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.33.182	20/Mar/2012 09:21:56 +0100	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/include_templates/0001_0001_in.tpl line 6]: syntax error: $smarty.subs is an unknown reference (Smarty_Compiler.class.php, line 2129)
+84.178.33.182	20/Mar/2012 09:21:57 +0100	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/include_templates/0001_0001_in.tpl line 6]: syntax error: $smarty.subs is an unknown reference (Smarty_Compiler.class.php, line 2129)
+84.178.33.182	20/Mar/2012 09:22:04 +0100	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/include_templates/0001_0001_in.tpl line 6]: syntax error: $smarty.subs is an unknown reference (Smarty_Compiler.class.php, line 2129)
+84.178.33.182	20/Mar/2012 09:22:06 +0100	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/include_templates/0001_0001_in.tpl line 6]: syntax error: $smarty.subs is an unknown reference (Smarty_Compiler.class.php, line 2129)
+84.178.33.182	20/Mar/2012 09:55:11 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.33.182	20/Mar/2012 09:55:13 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.33.182	20/Mar/2012 10:45:59 +0100	0	SYSTEM	ERROR	Smarty error: unable to read resource: "en.lng"
+84.178.33.182	20/Mar/2012 10:47:38 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:47:51 +0100	0	SYSTEM	ERROR	Smarty error: unable to read resource: "en.lng"
+84.178.33.182	20/Mar/2012 10:48:02 +0100	0	SYSTEM	ERROR	Smarty error: unable to read resource: "en.lng"
+84.178.33.182	20/Mar/2012 10:48:09 +0100	0	SYSTEM	ERROR	Smarty error: unable to read resource: "en.lng"
+84.178.33.182	20/Mar/2012 10:51:13 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:51:25 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:51:57 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:52:02 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:52:15 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:54:02 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'templates_c' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 10:54:32 +0100	0	SYSTEM	ERROR	Smarty error: the $compile_dir 'COMPILEDIR' does not exist, or is not a directory.
+84.178.33.182	20/Mar/2012 11:02:09 +0100	0	SYSTEM	ERROR	Smarty error: unable to read resource: ".lng"
+84.178.33.182	20/Mar/2012 11:25:48 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.33.182	20/Mar/2012 11:29:12 +0100	13	SYSTEM	ERROR	There's no method form_checkbox() in PhenotypeComponent_08.
+84.178.33.182	20/Mar/2012 12:16:45 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.33.182	20/Mar/2012 12:47:00 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.33.182	20/Mar/2012 12:55:58 +0100	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.33.182	20/Mar/2012 12:55:58 +0100	13	SYSTEM	INFO	Snapshot 5 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.33.182	20/Mar/2012 13:52:12 +0100	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.33.182	20/Mar/2012 13:52:12 +0100	13	SYSTEM	INFO	Snapshot 6 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.238.242	20/Mar/2012 16:00:00 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.238.242	20/Mar/2012 16:53:59 +0100	0	SYSTEM	INFO	Benutzer 14 - Hanna Jüngling abgemeldet
+79.192.238.242	21/Mar/2012 08:51:06 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.238.242	21/Mar/2012 09:43:49 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.238.242	21/Mar/2012 10:05:20 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.238.242	21/Mar/2012 10:36:48 +0100	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 10:36:48 +0100	14	SYSTEM	INFO	Snapshot 7 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 10:40:12 +0100	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 10:40:12 +0100	14	SYSTEM	INFO	Snapshot 8 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 10:41:47 +0100	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 10:41:47 +0100	14	SYSTEM	INFO	Snapshot 9 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 11:08:52 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.238.242	21/Mar/2012 11:35:45 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.238.242	21/Mar/2012 13:20:15 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.238.242	21/Mar/2012 13:28:48 +0100	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:28:48 +0100	14	SYSTEM	INFO	Snapshot 10 zu Datensatz 1002 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 13:35:21 +0100	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:35:21 +0100	14	SYSTEM	INFO	Snapshot 11 zu Datensatz 1002 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 13:48:13 +0100	14	SYSTEM	INFO	Datensatz 1003 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:48:13 +0100	14	SYSTEM	INFO	Snapshot 12 zu Datensatz 1003 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 13:49:26 +0100	14	SYSTEM	INFO	Datensatz 1003 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:49:26 +0100	14	SYSTEM	INFO	Snapshot 13 zu Datensatz 1003 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 13:55:03 +0100	14	SYSTEM	INFO	Datensatz 1004 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:55:03 +0100	14	SYSTEM	INFO	Snapshot 14 zu Datensatz 1004 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 13:57:23 +0100	14	SYSTEM	INFO	Datensatz 1004 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 13:57:23 +0100	14	SYSTEM	INFO	Snapshot 15 zu Datensatz 1004 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 14:01:15 +0100	14	SYSTEM	INFO	Datensatz 1005 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 14:01:15 +0100	14	SYSTEM	INFO	Snapshot 16 zu Datensatz 1005 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 14:02:15 +0100	14	SYSTEM	INFO	Datensatz 1005 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 14:02:15 +0100	14	SYSTEM	INFO	Snapshot 17 zu Datensatz 1005 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 14:54:09 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.238.242	21/Mar/2012 14:58:12 +0100	13	SYSTEM	INFO	Unknown i8ln token #Inconclusive tree structure# for section "Config"
+79.192.238.242	21/Mar/2012 15:12:59 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY' at line 1
+
+SELECT * FROM sequence_data WHERE pag_id = 26 AND ver_id =  AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY dat_pos
+79.192.238.242	21/Mar/2012 15:13:58 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY' at line 1
+
+SELECT * FROM sequence_data WHERE pag_id = 26 AND ver_id =  AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY dat_pos
+79.192.238.242	21/Mar/2012 15:14:23 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY' at line 1
+
+SELECT * FROM sequence_data WHERE pag_id = 26 AND ver_id =  AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY dat_pos
+79.192.238.242	21/Mar/2012 15:14:26 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY lay_blocknr' at line 1
+
+SELECT * FROM layout_block WHERE lay_id =  ORDER BY lay_blocknr
+79.192.238.242	21/Mar/2012 15:14:37 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY' at line 1
+
+SELECT * FROM sequence_data WHERE pag_id = 26 AND ver_id =  AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY dat_pos
+79.192.238.242	21/Mar/2012 15:14:43 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY lay_blocknr' at line 1
+
+SELECT * FROM layout_block WHERE lay_id =  ORDER BY lay_blocknr
+79.192.238.242	21/Mar/2012 15:14:49 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY lay_blocknr' at line 1
+
+SELECT * FROM layout_block WHERE lay_id =  ORDER BY lay_blocknr
+79.192.238.242	21/Mar/2012 15:14:51 +0100	0	SYSTEM	ERROR	1052 - Column 'grp_id' in where clause is ambiguous
+
+SELECT page.*,pagegroup.grp_id, pagegroup.grp_statistic, pagegroup.grp_multilanguage, pagegroup.grp_smarturl_schema FROM page, pagegroup WHERE pag_id = 26 AND grp_id=1 AND page.grp_id=pagegroup.grp_id
+79.192.238.242	21/Mar/2012 15:14:55 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY lay_blocknr' at line 1
+
+SELECT * FROM layout_block WHERE lay_id =  ORDER BY lay_blocknr
+79.192.238.242	21/Mar/2012 15:15:07 +0100	0	SYSTEM	ERROR	1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY' at line 1
+
+SELECT * FROM sequence_data WHERE pag_id = 26 AND ver_id =  AND dat_blocknr=1 AND dat_editbuffer=0 AND dat_visible = 1 AND lng_id=1 ORDER BY dat_pos
+79.192.238.242	21/Mar/2012 15:15:15 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.238.242	21/Mar/2012 15:22:17 +0100	14	SYSTEM	INFO	Datensatz 1006 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 15:22:17 +0100	14	SYSTEM	INFO	Snapshot 18 zu Datensatz 1006 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 15:23:44 +0100	14	SYSTEM	INFO	Datensatz 1006 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 15:23:44 +0100	14	SYSTEM	INFO	Snapshot 19 zu Datensatz 1006 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 15:30:14 +0100	14	SYSTEM	INFO	Datensatz 1007 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 15:30:14 +0100	14	SYSTEM	INFO	Snapshot 20 zu Datensatz 1007 (Content-Type 1) erstellt.
+79.192.238.242	21/Mar/2012 15:31:35 +0100	14	SYSTEM	INFO	Datensatz 1007 (Content-Type 1) bearbeitet.
+79.192.238.242	21/Mar/2012 15:31:35 +0100	14	SYSTEM	INFO	Snapshot 21 zu Datensatz 1007 (Content-Type 1) erstellt.
+79.192.244.207	21/Mar/2012 15:53:45 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.244.207	21/Mar/2012 16:28:25 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.244.207	21/Mar/2012 16:32:56 +0100	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.244.207	21/Mar/2012 16:32:56 +0100	14	SYSTEM	INFO	Snapshot 22 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.244.207	21/Mar/2012 16:57:33 +0100	0	SYSTEM	INFO	Benutzer 14 - Hanna Jüngling abgemeldet
+79.192.250.10	22/Mar/2012 10:24:11 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 11:05:09 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 11:07:31 +0100	14	SYSTEM	INFO	Datensatz 1008 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 11:07:31 +0100	14	SYSTEM	INFO	Snapshot 23 zu Datensatz 1008 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 11:09:06 +0100	14	SYSTEM	INFO	Datensatz 1008 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 11:09:06 +0100	14	SYSTEM	INFO	Snapshot 24 zu Datensatz 1008 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 11:18:02 +0100	14	SYSTEM	INFO	Datensatz 1009 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 11:18:02 +0100	14	SYSTEM	INFO	Snapshot 25 zu Datensatz 1009 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 11:21:40 +0100	14	SYSTEM	INFO	Datensatz 1009 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 11:21:40 +0100	14	SYSTEM	INFO	Snapshot 26 zu Datensatz 1009 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 13:17:40 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.250.10	22/Mar/2012 13:34:12 +0100	14	SYSTEM	INFO	Datensatz 1010 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 13:34:12 +0100	14	SYSTEM	INFO	Snapshot 27 zu Datensatz 1010 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 13:35:41 +0100	14	SYSTEM	INFO	Datensatz 1010 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 13:35:41 +0100	14	SYSTEM	INFO	Snapshot 28 zu Datensatz 1010 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 14:24:07 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 14:32:32 +0100	14	SYSTEM	INFO	Datensatz 1011 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 14:32:32 +0100	14	SYSTEM	INFO	Snapshot 29 zu Datensatz 1011 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 14:34:00 +0100	14	SYSTEM	INFO	Datensatz 1011 (Content-Type 1) bearbeitet.
+79.192.250.10	22/Mar/2012 14:34:00 +0100	14	SYSTEM	INFO	Snapshot 30 zu Datensatz 1011 (Content-Type 1) erstellt.
+79.192.250.10	22/Mar/2012 14:50:40 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+79.192.250.10	22/Mar/2012 15:39:18 +0100	0	SYSTEM	INFO	Login failed - think
+79.192.250.10	22/Mar/2012 15:39:23 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 16:27:37 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 16:31:54 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+79.192.250.10	22/Mar/2012 16:47:16 +0100	0	SYSTEM	INFO	Benutzer 14 - Hanna Jüngling abgemeldet
+84.178.36.68	23/Mar/2012 09:08:31 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.36.68	23/Mar/2012 11:18:08 +0100	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.36.68	23/Mar/2012 11:42:18 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.36.68	23/Mar/2012 14:32:15 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.36.68	23/Mar/2012 15:27:36 +0100	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.36.68	23/Mar/2012 16:40:30 +0100	0	SYSTEM	INFO	Benutzer 14 - Hanna Jüngling abgemeldet
+84.178.59.163	30/Mar/2012 10:23:48 +0200	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.59.163	30/Mar/2012 10:39:25 +0200	13	SYSTEM	INFO	Unknown i8ln token #Inconclusive tree structure# for section "Config"
+84.178.59.163	30/Mar/2012 10:39:29 +0200	13	SYSTEM	INFO	Unknown i8ln token #Inconclusive tree structure# for section "Config"
+84.178.59.163	30/Mar/2012 10:39:32 +0200	13	SYSTEM	INFO	Unknown i8ln token #Inconclusive tree structure# for section "Config"
+84.178.52.114	04/May/2012 14:15:32 +0200	0	SYSTEM	INFO	Login failed - think
+84.178.52.114	04/May/2012 14:15:40 +0200	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.52.114	04/May/2012 14:18:54 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:18:54 +0200	14	SYSTEM	INFO	Snapshot 31 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:19:11 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:19:11 +0200	14	SYSTEM	INFO	Snapshot 32 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:19:22 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:19:22 +0200	14	SYSTEM	INFO	Snapshot 33 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:19:53 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:19:53 +0200	14	SYSTEM	INFO	Snapshot 34 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:20:20 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:20:20 +0200	14	SYSTEM	INFO	Snapshot 35 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:20:36 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 14:20:36 +0200	14	SYSTEM	INFO	Snapshot 36 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 14:25:27 +0200	14	SYSTEM	INFO	Mediaobject 40 edited.
+84.178.52.114	04/May/2012 14:37:53 +0200	14	SYSTEM	INFO	Mediaobject 94 edited.
+84.178.52.114	04/May/2012 15:18:19 +0200	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/page_templates/0002.normal.tpl line 116]: syntax error: unrecognized tag 'title' (Smarty_Compiler.class.php, line 590)
+84.178.52.114	04/May/2012 15:30:52 +0200	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.52.114	04/May/2012 15:31:26 +0200	14	SYSTEM	INFO	Mediaobject 34 edited.
+84.178.52.114	04/May/2012 15:32:09 +0200	14	SYSTEM	INFO	Mediaobject 35 edited.
+84.178.52.114	04/May/2012 15:32:25 +0200	14	SYSTEM	INFO	Mediaobject 40 edited.
+84.178.52.114	04/May/2012 15:32:44 +0200	14	SYSTEM	INFO	Mediaobject 39 edited.
+84.178.52.114	04/May/2012 15:32:57 +0200	14	SYSTEM	INFO	Mediaobject 38 edited.
+84.178.52.114	04/May/2012 15:33:12 +0200	14	SYSTEM	INFO	Mediaobject 37 edited.
+84.178.52.114	04/May/2012 15:33:26 +0200	14	SYSTEM	INFO	Mediaobject 36 edited.
+84.178.52.114	04/May/2012 15:35:58 +0200	14	SYSTEM	INFO	Mediaobject 36 edited.
+84.178.52.114	04/May/2012 15:36:13 +0200	14	SYSTEM	INFO	Mediaobject 37 edited.
+84.178.52.114	04/May/2012 15:36:26 +0200	14	SYSTEM	INFO	Mediaobject 38 edited.
+84.178.52.114	04/May/2012 15:36:42 +0200	14	SYSTEM	INFO	Mediaobject 39 edited.
+84.178.52.114	04/May/2012 15:36:58 +0200	14	SYSTEM	INFO	Mediaobject 40 edited.
+84.178.52.114	04/May/2012 15:37:13 +0200	14	SYSTEM	INFO	Mediaobject 35 edited.
+84.178.52.114	04/May/2012 15:37:28 +0200	14	SYSTEM	INFO	Mediaobject 34 edited.
+84.178.52.114	04/May/2012 15:39:24 +0200	14	SYSTEM	INFO	Mediaobject 45 edited.
+84.178.52.114	04/May/2012 15:39:37 +0200	14	SYSTEM	INFO	Mediaobject 44 edited.
+84.178.52.114	04/May/2012 15:39:53 +0200	14	SYSTEM	INFO	Mediaobject 43 edited.
+84.178.52.114	04/May/2012 15:40:06 +0200	14	SYSTEM	INFO	Mediaobject 42 edited.
+84.178.52.114	04/May/2012 15:43:04 +0200	14	SYSTEM	INFO	Mediaobject 111 edited.
+84.178.52.114	04/May/2012 15:43:16 +0200	14	SYSTEM	INFO	Mediaobject 110 edited.
+84.178.52.114	04/May/2012 15:43:31 +0200	14	SYSTEM	INFO	Mediaobject 109 edited.
+84.178.52.114	04/May/2012 15:43:46 +0200	14	SYSTEM	INFO	Mediaobject 108 edited.
+84.178.52.114	04/May/2012 15:44:08 +0200	14	SYSTEM	INFO	Mediaobject 107 edited.
+84.178.52.114	04/May/2012 15:52:55 +0200	14	SYSTEM	INFO	Mediaobject 66 edited.
+84.178.52.114	04/May/2012 15:53:09 +0200	14	SYSTEM	INFO	Mediaobject 65 edited.
+84.178.52.114	04/May/2012 15:53:26 +0200	14	SYSTEM	INFO	Mediaobject 64 edited.
+84.178.52.114	04/May/2012 15:53:43 +0200	14	SYSTEM	INFO	Mediaobject 63 edited.
+84.178.52.114	04/May/2012 15:54:07 +0200	14	SYSTEM	INFO	Mediaobject 62 edited.
+84.178.52.114	04/May/2012 15:54:48 +0200	14	SYSTEM	INFO	Mediaobject 63 edited.
+84.178.52.114	04/May/2012 15:56:10 +0200	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.52.114	04/May/2012 15:56:51 +0200	14	SYSTEM	INFO	Mediaobject 63 edited.
+84.178.52.114	04/May/2012 15:59:53 +0200	14	SYSTEM	INFO	Mediaobject 72 edited.
+84.178.52.114	04/May/2012 16:00:10 +0200	14	SYSTEM	INFO	Mediaobject 71 edited.
+84.178.52.114	04/May/2012 16:00:30 +0200	14	SYSTEM	INFO	Mediaobject 70 edited.
+84.178.52.114	04/May/2012 16:00:50 +0200	14	SYSTEM	INFO	Mediaobject 69 edited.
+84.178.52.114	04/May/2012 16:01:09 +0200	14	SYSTEM	INFO	Mediaobject 67 edited.
+84.178.52.114	04/May/2012 16:02:36 +0200	14	SYSTEM	INFO	Datensatz 1008 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 16:02:36 +0200	14	SYSTEM	INFO	Snapshot 37 zu Datensatz 1008 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 16:03:10 +0200	0	SYSTEM	ERROR	smartURL 'en/About-Us' not unique.
+Check your smartURL setup. Probably you have to activate 'full path' for some pagegroups.
+84.178.52.114	04/May/2012 16:21:30 +0200	14	SYSTEM	INFO	Mediaobject 76 edited.
+84.178.52.114	04/May/2012 16:21:57 +0200	14	SYSTEM	INFO	Mediaobject 85 edited.
+84.178.52.114	04/May/2012 16:22:21 +0200	14	SYSTEM	INFO	Mediaobject 84 edited.
+84.178.52.114	04/May/2012 16:22:42 +0200	14	SYSTEM	INFO	Mediaobject 83 edited.
+84.178.52.114	04/May/2012 16:23:05 +0200	14	SYSTEM	INFO	Mediaobject 82 edited.
+84.178.52.114	04/May/2012 16:23:32 +0200	14	SYSTEM	INFO	Mediaobject 81 edited.
+84.178.52.114	04/May/2012 16:23:51 +0200	14	SYSTEM	INFO	Mediaobject 78 edited.
+84.178.52.114	04/May/2012 16:24:16 +0200	14	SYSTEM	INFO	Mediaobject 77 edited.
+84.178.52.114	04/May/2012 16:25:47 +0200	14	SYSTEM	INFO	Datensatz 1009 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 16:25:47 +0200	14	SYSTEM	INFO	Snapshot 38 zu Datensatz 1009 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 16:39:53 +0200	14	SYSTEM	INFO	Mediaobject 101 edited.
+84.178.52.114	04/May/2012 16:40:16 +0200	14	SYSTEM	INFO	Mediaobject 106 edited.
+84.178.52.114	04/May/2012 16:40:36 +0200	14	SYSTEM	INFO	Mediaobject 105 edited.
+84.178.52.114	04/May/2012 16:40:55 +0200	14	SYSTEM	INFO	Mediaobject 103 edited.
+84.178.52.114	04/May/2012 16:41:11 +0200	14	SYSTEM	INFO	Mediaobject 102 edited.
+84.178.52.114	04/May/2012 16:41:59 +0200	14	SYSTEM	INFO	Datensatz 1010 (Content-Type 1) bearbeitet.
+84.178.52.114	04/May/2012 16:41:59 +0200	14	SYSTEM	INFO	Snapshot 39 zu Datensatz 1010 (Content-Type 1) erstellt.
+84.178.52.114	04/May/2012 17:27:40 +0200	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.52.114	04/May/2012 17:32:52 +0200	0	SYSTEM	ERROR	Smarty error: [in /var/www/vhosts/think-dev.de/dalatedensee/dynamisch/_phenotype/application/templates/component_templates/0005_0001_cm.tpl line 1]: syntax error: unclosed tag \{if} (opened line 1). (Smarty_Compiler.class.php, line 317)
+84.178.52.114	04/May/2012 17:37:19 +0200	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.52.114	04/May/2012 17:37:36 +0200	13	SYSTEM	INFO	Mediaobject 112 edited.
+84.178.44.97	29/May/2012 10:50:34 +0200	0	SYSTEM	INFO	User 14 - Hanna Jüngling successfully logged in
+84.178.44.97	29/May/2012 10:52:52 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 10:52:52 +0200	14	SYSTEM	INFO	Snapshot 40 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 10:58:50 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 10:58:50 +0200	14	SYSTEM	INFO	Snapshot 41 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 10:59:13 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 10:59:13 +0200	14	SYSTEM	INFO	Snapshot 42 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:00:20 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:00:20 +0200	14	SYSTEM	INFO	Snapshot 43 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:27:23 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:27:23 +0200	14	SYSTEM	INFO	Snapshot 44 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:29:00 +0200	14	SYSTEM	INFO	Datensatz 1003 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:29:00 +0200	14	SYSTEM	INFO	Snapshot 45 zu Datensatz 1003 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:30:39 +0200	14	SYSTEM	INFO	Datensatz 1011 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:30:39 +0200	14	SYSTEM	INFO	Snapshot 46 zu Datensatz 1011 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:31:49 +0200	14	SYSTEM	INFO	Datensatz 1012 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:31:49 +0200	14	SYSTEM	INFO	Snapshot 47 zu Datensatz 1012 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:49:44 +0200	14	SYSTEM	INFO	Datensatz 1012 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:49:44 +0200	14	SYSTEM	INFO	Snapshot 48 zu Datensatz 1012 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:52:24 +0200	14	SYSTEM	INFO	Datensatz 1013 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:52:24 +0200	14	SYSTEM	INFO	Snapshot 49 zu Datensatz 1013 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 11:53:39 +0200	14	SYSTEM	INFO	Datensatz 1013 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 11:53:39 +0200	14	SYSTEM	INFO	Snapshot 50 zu Datensatz 1013 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:00:38 +0200	14	SYSTEM	INFO	Datensatz 1013 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:00:38 +0200	14	SYSTEM	INFO	Snapshot 51 zu Datensatz 1013 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:03:20 +0200	14	SYSTEM	INFO	Datensatz 1014 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:03:20 +0200	14	SYSTEM	INFO	Snapshot 52 zu Datensatz 1014 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:04:09 +0200	14	SYSTEM	INFO	Datensatz 1014 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:04:09 +0200	14	SYSTEM	INFO	Snapshot 53 zu Datensatz 1014 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:11:33 +0200	14	SYSTEM	INFO	Datensatz 1008 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:11:33 +0200	14	SYSTEM	INFO	Snapshot 54 zu Datensatz 1008 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:42:23 +0200	14	SYSTEM	INFO	Datensatz 1002 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:42:23 +0200	14	SYSTEM	INFO	Snapshot 55 zu Datensatz 1002 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:42:51 +0200	14	SYSTEM	INFO	Datensatz 1003 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:42:51 +0200	14	SYSTEM	INFO	Snapshot 56 zu Datensatz 1003 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 12:43:18 +0200	14	SYSTEM	INFO	Datensatz 1011 (Content-Type 1) bearbeitet.
+84.178.44.97	29/May/2012 12:43:18 +0200	14	SYSTEM	INFO	Snapshot 57 zu Datensatz 1011 (Content-Type 1) erstellt.
+84.178.44.97	29/May/2012 13:25:21 +0200	0	SYSTEM	INFO	Benutzer 14 - Hanna Jüngling abgemeldet
+84.178.58.111	13/Jun/2012 13:29:52 +0200	0	SYSTEM	INFO	User 13 - Christian Weber successfully logged in
+84.178.58.111	13/Jun/2012 14:21:04 +0200	13	SYSTEM	INFO	Mediaobject 27 edited.
+84.178.58.111	13/Jun/2012 14:21:19 +0200	13	SYSTEM	INFO	Mediaobject 23 edited.
+84.178.58.111	13/Jun/2012 14:21:38 +0200	13	SYSTEM	INFO	Mediaobject 26 edited.
+84.178.58.111	13/Jun/2012 14:21:53 +0200	13	SYSTEM	INFO	Mediaobject 17 edited.
+84.178.58.111	13/Jun/2012 14:22:05 +0200	13	SYSTEM	INFO	Mediaobject 18 edited.
+84.178.58.111	13/Jun/2012 14:22:20 +0200	13	SYSTEM	INFO	Mediaobject 24 edited.
+84.178.58.111	13/Jun/2012 14:22:38 +0200	13	SYSTEM	INFO	Mediaobject 28 edited.
+84.178.58.111	13/Jun/2012 14:22:50 +0200	13	SYSTEM	INFO	Mediaobject 20 edited.
+84.178.58.111	13/Jun/2012 14:23:07 +0200	13	SYSTEM	INFO	Mediaobject 22 edited.
+84.178.58.111	13/Jun/2012 14:23:20 +0200	13	SYSTEM	INFO	Mediaobject 25 edited.
+84.178.58.111	13/Jun/2012 14:32:15 +0200	13	SYSTEM	INFO	Mediaobject 31 edited.
+84.178.58.111	13/Jun/2012 15:00:41 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.58.111	13/Jun/2012 15:00:41 +0200	13	SYSTEM	INFO	Snapshot 58 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.58.111	13/Jun/2012 15:01:00 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+84.178.58.111	13/Jun/2012 15:01:00 +0200	13	SYSTEM	INFO	Snapshot 59 zu Datensatz 1000 (Content-Type 1) erstellt.
+84.178.42.1	21/Sep/2012 11:21:07 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 11:57:29 +0200	0	SYSTEM	ERROR	Smarty error: unable to read resource: "Deutsch.lng"
+84.178.42.1	21/Sep/2012 11:58:13 +0200	0	SYSTEM	ERROR	Smarty error: unable to read resource: "Deutsch.lng"
+84.178.42.1	21/Sep/2012 11:58:24 +0200	0	SYSTEM	ERROR	Smarty error: unable to read resource: "Deutsch.lng"
+84.178.42.1	21/Sep/2012 11:58:26 +0200	0	SYSTEM	ERROR	Smarty error: unable to read resource: "Deutsch.lng"
+84.178.42.1	21/Sep/2012 13:45:46 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 14:15:39 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 14:40:16 +0200	0	SYSTEM	INFO	User 14 - Bastian Soltysiak successfully logged in
+84.178.42.1	21/Sep/2012 14:46:57 +0200	0	SYSTEM	INFO	Benutzer 14 - Bastian Soltysiak abgemeldet
+84.178.42.1	21/Sep/2012 15:02:00 +0200	0	SYSTEM	INFO	Benutzer 13 - Starter  abgemeldet
+84.178.42.1	21/Sep/2012 15:02:18 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:03:00 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:03:01 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:03:04 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:04:30 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:06:17 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:06:31 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:07:40 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 15:07:49 +0200	0	SYSTEM	INFO	Benutzer 13 - Starter  abgemeldet
+84.178.42.1	21/Sep/2012 15:07:51 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:08:26 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:08:28 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:08:30 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:08:41 +0200	0	SYSTEM	INFO	Login failed - 
+84.178.42.1	21/Sep/2012 15:08:43 +0200	0	SYSTEM	INFO	Login failed - asd#
+84.178.42.1	21/Sep/2012 15:20:09 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 15:20:15 +0200	0	SYSTEM	INFO	Benutzer 13 - Starter  abgemeldet
+84.178.42.1	21/Sep/2012 15:20:39 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:08 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:10 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:11 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:12 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:12 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:12 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:24 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:34 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:21:44 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:22:45 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:22:51 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:23:19 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:23:24 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:23:41 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:23:59 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:24:43 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:24:57 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:25:34 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.42.1	21/Sep/2012 15:25:39 +0200	0	SYSTEM	INFO	Login failed - WChris
+84.178.42.1	21/Sep/2012 15:25:42 +0200	0	SYSTEM	INFO	Login failed - WChris
+84.178.42.1	21/Sep/2012 15:25:55 +0200	0	SYSTEM	INFO	Login failed - WChris
+84.178.42.1	21/Sep/2012 15:25:59 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+84.178.42.1	21/Sep/2012 15:44:22 +0200	0	SYSTEM	INFO	Benutzer 13 - Starter  abgemeldet
+84.178.33.12	24/Sep/2012 09:07:43 +0200	0	SYSTEM	INFO	Benutzer  - N.N. abgemeldet
+84.178.33.12	24/Sep/2012 09:21:34 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 10:22:20 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 11:24:19 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 12:02:33 +0200	0	SYSTEM	INFO	Login failed - think
+79.192.227.199	24/Sep/2012 12:02:39 +0200	0	SYSTEM	INFO	Login failed - think
+79.192.227.199	24/Sep/2012 12:02:44 +0200	0	SYSTEM	INFO	User 14 - Bastian Soltysiak successfully logged in
+79.192.227.199	24/Sep/2012 12:15:47 +0200	0	SYSTEM	INFO	Benutzer 14 - Bastian Soltysiak abgemeldet
+79.192.227.199	24/Sep/2012 12:43:43 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 14:46:40 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 14:47:06 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 14:48:55 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 14:49:45 +0200	0	SYSTEM	INFO	User 13 - Starter  successfully logged in
+79.192.227.199	24/Sep/2012 15:12:32 +0200	0	SYSTEM	INFO	User 14 - Bastian Soltysiak successfully logged in
+79.192.227.199	24/Sep/2012 15:19:36 +0200	14	SYSTEM	INFO	Mediaobject 59 edited.
+79.192.227.199	24/Sep/2012 15:20:06 +0200	14	SYSTEM	INFO	Mediaobject 59 edited.
+79.192.227.199	24/Sep/2012 15:20:11 +0200	14	SYSTEM	INFO	Mediaobject 59 edited.
+79.192.227.199	24/Sep/2012 15:20:14 +0200	14	SYSTEM	INFO	Mediaobject 59 edited.
+79.192.227.199	24/Sep/2012 15:40:26 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:40:26 +0200	13	SYSTEM	INFO	Snapshot 1 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 15:40:56 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:40:56 +0200	13	SYSTEM	INFO	Snapshot 2 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 15:41:01 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:41:01 +0200	13	SYSTEM	INFO	Snapshot 3 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 15:43:12 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:43:12 +0200	13	SYSTEM	INFO	Snapshot 4 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 15:44:02 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:44:02 +0200	13	SYSTEM	INFO	Snapshot 5 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 15:58:19 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 15:58:19 +0200	13	SYSTEM	INFO	Snapshot 6 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:03:35 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:03:35 +0200	13	SYSTEM	INFO	Snapshot 7 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:06:50 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:06:50 +0200	13	SYSTEM	INFO	Snapshot 8 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:07:23 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:07:23 +0200	13	SYSTEM	INFO	Snapshot 9 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:07:47 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:07:47 +0200	13	SYSTEM	INFO	Snapshot 10 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:08:00 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:08:00 +0200	13	SYSTEM	INFO	Snapshot 11 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:08:56 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:08:56 +0200	13	SYSTEM	INFO	Snapshot 12 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:09:20 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:09:20 +0200	13	SYSTEM	INFO	Snapshot 13 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:10:29 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:10:29 +0200	13	SYSTEM	INFO	Snapshot 14 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:10:36 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:10:36 +0200	13	SYSTEM	INFO	Snapshot 15 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:12:23 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:12:23 +0200	13	SYSTEM	INFO	Snapshot 16 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:12:28 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:12:28 +0200	13	SYSTEM	INFO	Snapshot 17 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:13:34 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:13:34 +0200	13	SYSTEM	INFO	Snapshot 18 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:15:45 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:15:45 +0200	13	SYSTEM	INFO	Snapshot 19 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:16:25 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:16:25 +0200	13	SYSTEM	INFO	Snapshot 20 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:16:43 +0200	13	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:16:43 +0200	13	SYSTEM	INFO	Snapshot 21 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:17:47 +0200	0	SYSTEM	INFO	User 14 - Bastian Soltysiak successfully logged in
+79.192.227.199	24/Sep/2012 16:18:12 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:18:12 +0200	14	SYSTEM	INFO	Snapshot 22 zu Datensatz 1000 (Content-Type 1) erstellt.
+79.192.227.199	24/Sep/2012 16:18:32 +0200	14	SYSTEM	INFO	Datensatz 1000 (Content-Type 1) bearbeitet.
+79.192.227.199	24/Sep/2012 16:18:32 +0200	14	SYSTEM	INFO	Snapshot 23 zu Datensatz 1000 (Content-Type 1) erstellt.

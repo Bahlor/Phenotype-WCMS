@@ -1,0 +1,1 @@
+{if $img ne ''}<div class="grid_8 image drop-shadow curved curved-hz-1">{if $link ne ''}<a href="{$link}" class="external">{/if}{$img}{if $link ne ''}</a>{/if}</div>{/if}

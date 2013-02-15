@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+	</meta>
+	<layouts>
+		<layout>
+			<lay_id>1</lay_id>
+			<lay_bez>Hauptseiten</lay_bez>
+			<lay_description></lay_description>
+			<blocks>
+				<block>
+					<lay_blocknr>1</lay_blocknr>
+					<lay_blockbez>Inhalt</lay_blockbez>
+					<cog_id>1</cog_id>
+					<lay_context>1</lay_context>
+				</block>
+			</blocks>
+			<includes>
+				<include>
+					<inc_id>1</inc_id>
+					<lay_includenr>1</lay_includenr>
+					<lay_includecache>1</lay_includecache>
+				</include>
+				<include>
+					<inc_id>2</inc_id>
+					<lay_includenr>2</lay_includenr>
+					<lay_includecache>1</lay_includecache>
+				</include>
+				<include>
+					<inc_id>3</inc_id>
+					<lay_includenr>3</lay_includenr>
+					<lay_includecache>1</lay_includecache>
+				</include>
+				<include>
+					<inc_id>4</inc_id>
+					<lay_includenr>4</lay_includenr>
+					<lay_includecache>1</lay_includecache>
+				</include>
+				<include>
+					<inc_id>5</inc_id>
+					<lay_includenr>5</lay_includenr>
+					<lay_includecache>1</lay_includecache>
+				</include>
+			</includes>
+			<templates>
+				<page>&#60;!DOCTYPE html&#62;
+&#60;html lang=&#34;de&#34;&#62;
+&#60;head&#62;
+	&#60;title&#62;{$title|escape} - Fashion Session&#60;&#47;title&#62;
+	&#60;meta charset=&#34;utf-8&#34; &#47;&#62;
+	&#60;link rel=&#34;canonical&#34; href=&#34;http:&#47;&#47;www.fashion-session.de{url_for_page pag_id=$page-&#62;id}&#34; &#47;&#62;
+	{$pt_include5}
+	&#60;!--&#60;meta name = &#34;viewport&#34; content = &#34;width = device-width;&#34; &#47;&#62; --&#62;
+	&#60;!-- define the width of the page as no wider than the width of the viewport --&#62; 
+	&#60;link rel=&#34;icon&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;favicon.ico&#34; type=&#34;image&#47;x-icon&#34; &#47;&#62;
+	&#60;link rel=&#34;shortcut icon&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;favicon.ico&#34; type=&#34;image&#47;x-icon&#34; &#47;&#62;
+	&#60;link rel=&#34;stylesheet&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;main.css&#34; &#47;&#62;
+	&#60;link rel=&#34;stylesheet&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;_print&#47;main.css&#34; media=&#34;print&#34; &#47;&#62;
+	&#60;link rel=&#34;stylesheet&#34; type=&#34;text&#47;css&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;themes&#47;default.css&#34; &#47;&#62;
+	&#60;!--[if IE]&#62;&#60;link rel=&#34;stylesheet&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;_patches&#47;win-ie-all.css&#34; media=&#34;all&#34; &#47;&#62;&#60;![endif]--&#62; 
+	&#60;!--[if IE 7]&#62;&#60;link rel=&#34;stylesheet&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;_patches&#47;win-ie7.css&#34; media=&#34;all&#34; &#47;&#62;&#60;![endif]--&#62; 
+	&#60;!--[if lt IE 7]&#62;&#60;link rel=&#34;stylesheet&#34; href=&#34;&#47;dynamisch&#47;htdocs&#47;css&#47;_patches&#47;win-ie-old.css&#34; media=&#34;all&#34; &#47;&#62;&#60;![endif]--&#62; 
+	&#60;!--[if lt IE 9]&#62;&#60;script src=&#34;http:&#47;&#47;html5shiv.googlecode.com&#47;svn&#47;trunk&#47;html5.js&#34;&#62;&#60;&#47;script&#62;&#60;![endif]--&#62; 
+	&#60;!--[if IE ]&#62;&#60;link rel=&#34;stylesheet&#34; href=&#34;css&#47;ie.css&#34; media=&#34;all&#34;&#47;&#62;&#60;![endif]--&#62; 
+	&#60;link href=&#39;http:&#47;&#47;fonts.googleapis.com&#47;css?family=Enriqueta:400,700|Open+Sans:400italic,800italic,600italic,400,600,800&#39; rel=&#39;stylesheet&#39; type=&#39;text&#47;css&#39; &#47;&#62;
+&#60;&#47;head&#62;
+&#60;body&#62;
+	&#60;header&#62;
+		&#60;div class=&#34;wrapper&#34;&#62;
+			&#60;a href=&#34;{url_for_page pag_id=1}&#34; id=&#34;logo&#34; title=&#34;Back to home&#34;&#62;&#60;img src=&#34;&#47;dynamisch&#47;htdocs&#47;images&#47;site&#47;logo.png&#34; width=&#34;266&#34; height=&#34;89&#34; alt=&#34;Fashion Session Logo&#34; &#47;&#62;&#60;&#47;a&#62;
+			&#60;nav&#62;
+				&#60;ul&#62;
+					{$pt_include1}
+				&#60;&#47;ul&#62;
+			&#60;&#47;nav&#62;
+		&#60;&#47;div&#62;
+	&#60;&#47;header&#62;
+	&#60;section id=&#34;slider&#34;&#62;
+		&#60;div class=&#34;wrapper&#34; id=&#34;slidewrap&#34;&#62;
+			&#60;ul&#62;
+				&#60;li&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_0.png&#34; width=&#34;319&#34; height=&#34;401&#34; alt=&#34;&#34; class=&#34;woman animate-in&#34; &#47;&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_1.png&#34; width=&#34;424&#34; height=&#34;166&#34; alt=&#34;&#34; class=&#34;text animate-in&#34; &#47;&#62;
+				&#60;&#47;li&#62;
+				&#60;li&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_0.png&#34; width=&#34;319&#34; height=&#34;401&#34; alt=&#34;&#34; class=&#34;woman&#34; &#47;&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_1.png&#34; width=&#34;424&#34; height=&#34;166&#34; alt=&#34;&#34; class=&#34;text&#34; &#47;&#62;
+				&#60;&#47;li&#62;
+				&#60;li&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_0.png&#34; width=&#34;319&#34; height=&#34;401&#34; alt=&#34;&#34; class=&#34;woman&#34; &#47;&#62;
+					&#60;img src=&#34;http:&#47;&#47;fashionsession.think-dev.de&#47;images&#47;slider&#47;1_1.png&#34; width=&#34;424&#34; height=&#34;166&#34; alt=&#34;&#34; class=&#34;text&#34; &#47;&#62;
+				&#60;&#47;li&#62;
+			&#60;&#47;ul&#62;
+		&#60;&#47;div&#62;
+	&#60;&#47;section&#62;
+	&#60;section id=&#34;content&#34;&#62;
+		&#60;div class=&#34;wrapper container&#34;&#62;
+			&#60;h1&#62;Fashion Session - The real party&#60;&#47;h1&#62;
+			&#60;hr &#47;&#62;
+			&#60;div id=&#34;content_wrap&#34; class=&#34;grid_8&#34;&#62;
+				{if $pt_block1 eq &#39;&#39;}&#38;nbsp;{else}{$pt_block1}{&#47;if}
+			&#60;&#47;div&#62;
+			&#60;aside class=&#34;push_1 grid_7&#34;&#62;
+				&#60;div class=&#34;block&#34;&#62;
+					&#60;h3&#62;Headline f&#38;uuml;r verschiedene Highlights&#60;&#47;h3&#62;
+					&#60;img src=&#34;images&#47;highlights&#47;1.jpg&#34; width=&#34;160&#34; height=&#34;133&#34; alt=&#34;Headline f&#38;uuml;r verschiedene Highlights&#34; &#47;&#62;
+					&#60;p&#62;Idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam&#60;&#47;p&#62;
+					&#60;div class=&#34;clearfix clear&#34;&#62;&#60;&#47;div&#62;
+				&#60;&#47;div&#62;
+
+				&#60;div class=&#34;block&#34;&#62;
+					&#60;h3&#62;Headline f&#38;uuml;r verschiedene Highlights&#60;&#47;h3&#62;
+					&#60;img src=&#34;images&#47;highlights&#47;2.jpg&#34; width=&#34;160&#34; height=&#34;133&#34; alt=&#34;Headline f&#38;uuml;r verschiedene Highlights&#34; &#47;&#62;
+					&#60;p&#62;Idque offendit ius. Fugit suavitate ad eam, ut essent. Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint.&#60;&#47;p&#62;
+					&#60;div class=&#34;clearfix clear&#34;&#62;&#60;&#47;div&#62;
+				&#60;&#47;div&#62;
+
+				&#60;div class=&#34;block&#34;&#62;
+					&#60;h3&#62;Headline f&#38;uuml;r verschiedene Highlights&#60;&#47;h3&#62;
+					&#60;img src=&#34;images&#47;highlights&#47;3.jpg&#34; width=&#34;160&#34; height=&#34;133&#34; alt=&#34;Headline f&#38;uuml;r verschiedene Highlights&#34; &#47;&#62;
+					&#60;p&#62;Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam dor sit amt, nonumy percipit.&#60;&#47;p&#62;
+					&#60;div class=&#34;clearfix clear&#34;&#62;&#60;&#47;div&#62;
+				&#60;&#47;div&#62;
+			&#60;&#47;aside&#62;
+		&#60;&#47;div&#62;
+		&#60;div class=&#34;clearfix&#34;&#62;&#60;&#47;div&#62;
+	&#60;&#47;section&#62;
+	&#60;footer&#62;
+		&#60;div class=&#34;wrapper&#34;&#62;
+			&#60;div class=&#34;container&#34;&#62;
+				&#60;div class=&#34;grid_4&#34;&#62;
+					&#60;h4&#62;Quick Navigation&#60;&#47;h4&#62;
+					&#60;nav&#62;
+						&#60;ul&#62;
+							{$pt_include1}
+							{$pt_include4}
+						&#60;&#47;ul&#62;
+					&#60;&#47;nav&#62;
+				&#60;&#47;div&#62;
+				&#60;div class=&#34;grid_5 push_1&#34;&#62;
+					&#60;h4&#62;Kontakt&#60;&#47;h4&#62;
+					&#60;form name=&#34;kontakt&#34; method=&#34;post&#34; action=&#34;{url_for_page pag_id=$page-&#62;id}&#34; id=&#34;contact&#34;&#62;
+						&#60;p&#62;&#60;input type=&#34;email&#34; name=&#34;email&#34; value=&#34;&#34; placeholder=&#34;Email Adresse&#34; &#47;&#62;&#60;&#47;p&#62;
+						&#60;p&#62;&#60;input type=&#34;text&#34; name=&#34;subject&#34; value=&#34;&#34; placeholder=&#34;Betreff&#34; &#47;&#62;&#60;&#47;p&#62;
+						&#60;p&#62;&#60;textarea name=&#34;message&#34; placeholder=&#34;Message&#34;&#62;&#60;&#47;textarea&#62;&#60;&#47;p&#62;
+						&#60;p class=&#34;right&#34;&#62;&#60;input type=&#34;submit&#34; name=&#34;send&#34; value=&#34;Abschicken&#34; &#47;&#62;&#60;&#47;p&#62;
+					&#60;&#47;form&#62;
+				&#60;&#47;div&#62;
+				&#60;div class=&#34;grid_5 push_1&#34;&#62;
+					&#60;h4&#62;Social Media&#60;&#47;h4&#62;
+					&#60;p&#62;&#60;a href=&#34;#&#34; class=&#34;social facebook&#34;&#62;Facebook&#60;&#47;a&#62; &#60;a href=&#34;#&#34; class=&#34;social twitter&#34;&#62;Twitter&#60;&#47;a&#62; &#60;a href=&#34;#&#34; class=&#34;social youtube&#34;&#62;YouTube&#60;&#47;a&#62; &#60;a href=&#34;#&#34; class=&#34;social digg&#34;&#62;Digg&#60;&#47;a&#62; &#60;a href=&#34;#&#34; class=&#34;social rss&#34;&#62;RSS&#60;&#47;a&#62;&#60;&#47;p&#62;
+					&#60;div class=&#34;clear&#34;&#62;&#60;&#47;div&#62;
+				&#60;&#47;div&#62;
+				&#60;div class=&#34;clear&#34;&#62;&#60;&#47;div&#62;
+			&#60;&#47;div&#62;
+			&#60;p class=&#34;bottom&#34;&#62;&#38;copy; copyright 2012 by think! advertising GmbH&#60;&#47;p&#62;
+		&#60;&#47;div&#62;
+	&#60;&#47;footer&#62;
+	&#60;!--scripts--&#62;
+	&#60;script type=&#34;text&#47;javascript&#34; data-main=&#34;&#47;dynamisch&#47;htdocs&#47;js&#47;main.js&#34; src=&#34;&#47;dynamisch&#47;htdocs&#47;js&#47;require.js&#34;&#62;&#60;&#47;script&#62;
+&#60;&#47;body&#62;
+&#60;&#47;html&#62;</page>
+				<print>{pt_doctype dtd=&#34;XHTML1.0-Transitional&#34; charset=&#34;ISO-8859-1&#34;}
+&#60;!DOCTYPE html PUBLIC &#34;-&#47;&#47;W3C&#47;&#47;DTD XHTML 1.0 Transitional&#47;&#47;EN&#34; &#34;http:&#47;&#47;www.w3.org&#47;TR&#47;xhtml1&#47;DTD&#47;xhtml1-transitional.dtd&#34;&#62; 
+
+&#60;html xmlns=&#34;http:&#47;&#47;www.w3.org&#47;1999&#47;xhtml&#34;&#62;
+&#60;head&#62; 
+    &#60;title&#62;{$title|escape}&#60;&#47;title&#62;
+&#60;&#47;head&#62;
+
+&#60;body&#62;
+{$pt_block1}
+&#60;&#47;body&#62;
+&#60;&#47;html&#62;</print>
+			</templates><pagegroup grp_id=""/><pagegroup grp_id=""/><pagegroup grp_id=""/><pagegroup grp_id=""/><pagegroup grp_id=""/>
+		</layout>
+	</layouts>
+</phenotype>

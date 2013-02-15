@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+		<inc_id>6</inc_id>
+		<inc_bez>RSS</inc_bez>		
+		<inc_rubrik>Dynamic Content</inc_rubrik>
+		<inc_description></inc_description>
+		<inc_usage_layout>0</inc_usage_layout>
+		<inc_usage_includecomponent>0</inc_usage_includecomponent>
+		<inc_usage_page>1</inc_usage_page>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * RSS
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeInclude_6 extends PhenotypeInclude
+{
+  
+  public $id = 6;
+
+  public function display()
+  {
+    global $myDB, $myPage, $myRequest;
+	
+	&#47;&#47; Initialize template access (=&#62;$mySmarty) 
+	eval ($this-&#62;initRendering());	
+	
+	$last	=	time();
+	$news	=	array();
+	
+	$months =	(604800000*4)*6;
+	
+	 $_artikel	=	PhenotypePeer::getRecords(3,true,&#39;`dat_key1` DESC&#39;,array(&#39;`dat_key2` = &#34;2001&#34;&#39;),20);
+	 $artikel	=	array();
+	 $count	=	count($_artikel);
+	   foreach($_artikel	as $key =&#62; $art) {
+		    $artikel[]	=	array(	&#39;id&#39;		=&#62;	$art-&#62;id,
+		    						&#39;date&#39;		=&#62;	$art-&#62;get(&#39;date&#39;),
+		    						&#39;headline&#39;	=&#62;	$art-&#62;get(&#39;bez&#39;),
+		    						&#39;desc&#39;		=&#62;	strip_tags($art-&#62;get(&#39;teaser&#39;))
+		    						);
+		    if($key	== 0) {
+			    $last	=	$art-&#62;get(&#39;date&#39;);
+		    }
+	    }
+
+	$mySmarty-&#62;assign(&#39;last&#39;, 	$last);
+	$mySmarty-&#62;assign(&#39;presse&#39;,	$artikel);
+	$mySmarty-&#62;display($TPL_1);
+  }
+
+}
+?&#62;</script>
+	<templates>
+<template access="TPL_1">&#60;rss version=&#34;2.0&#34; xmlns:atom=&#34;http:&#47;&#47;www.w3.org&#47;2005&#47;Atom&#34;&#62;
+	&#60;channel&#62;
+		&#60;title&#62;Wasserverband Kinzig Presse&#60;&#47;title&#62;
+		&#60;description&#62;Presseartikel des Wasserverband Kinzig&#60;&#47;description&#62;
+		&#60;language&#62;de-de&#60;&#47;language&#62;
+		&#60;link&#62;http:&#47;&#47;www.wasserverband-kinzig.de&#47;rss&#47;&#60;&#47;link&#62;
+		&#60;atom:link href=&#34;http:&#47;&#47;www.wasserverband-kinzig.de&#47;rss&#47;&#34; rel=&#34;self&#34; type=&#34;application&#47;rss+xml&#34; &#47;&#62;
+		&#60;lastBuildDate&#62;{$last|date_format:&#34;%a, %d %b %Y %H:%M:%S&#34;} EST&#60;&#47;lastBuildDate&#62;
+		{foreach from=$presse item=&#34;p&#34;}
+		&#60;item&#62;
+			&#60;title&#62;{$p.date|date_format:&#34;%d.%m.%Y&#34;} - {$p.headline}&#60;&#47;title&#62;
+			&#60;description&#62;{$p.desc}&#60;&#47;description&#62;
+			&#60;link&#62;http:&#47;&#47;www.wasserverband-kinzig.de{url_for_page pag_id=15}&#60;&#47;link&#62;
+			&#60;pubDate&#62;{$p.date|date_format:&#34;%a, %d %b %Y %H:%M:%S&#34;} EST&#60;&#47;pubDate&#62;
+			&#60;guid&#62;http:&#47;&#47;www.wasserverband-kinzig.de{url_for_page pag_id=15}{$p.id}&#60;&#47;guid&#62;
+		&#60;&#47;item&#62;
+		{&#47;foreach}
+	&#60;&#47;channel&#62;
+&#60;&#47;rss&#62;</template>
+   	</templates>
+</phenotype>

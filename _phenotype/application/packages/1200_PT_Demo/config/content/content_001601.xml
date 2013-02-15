@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>
+		<con_id>1601</con_id>
+		<con_bez>Gallery</con_bez>
+		<con_rubrik>Demonstration</con_rubrik>
+		<con_description></con_description>
+		<con_anlegen>1</con_anlegen>
+		<con_bearbeiten>1</con_bearbeiten>
+		<con_loeschen>1</con_loeschen>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Simple example gallery
+ * 
+ * This very simple gallery can contain up to 20 images. 
+ * This content object class also demonstrates the drag &#38;amp; drop sorting possibilites
+ *
+ *&#47;
+class PhenotypeContent_1601 extends PhenotypeContent
+{
+
+  var $content_type = 1601;
+
+  &#47;&#47; tab configuration
+  var $_blocks = Array (&#34;Properties&#34;, &#34;Images 1-10&#34;,&#34;Images 11-20&#34;);
+  var $_icons = Array (&#34;b_konfig.gif&#34;, &#34;b_items.gif&#34;,&#34;b_items.gif&#34;);
+
+  &#47;**
+   * mark all images as visible on default
+   * 
+   * This method is always called when a new object of this type is created.
+   *
+   *&#47;
+  function setDefaultProperties()
+  {
+    $this-&#62;set(&#34;bez&#34;, &#34;Neue Galerie&#34;);
+    $this-&#62;set(&#34;ddimageorder&#34;,Array());
+
+    for ($i=1;$i&#60;=20;$i++)
+    {
+      $this-&#62;set(&#34;view&#34;.$i,1);
+    }
+  }
+
+  function init($row, $block_nr = 0)
+  {
+    parent :: init($row, $block_nr);
+
+
+    switch ($block_nr)
+    {
+      case 0:
+        $this-&#62;form_headline(&#34;Meta&#34;);
+        $this-&#62;form_textfield(&#34;Name&#34;, &#34;bez&#34;, 400);
+        $this-&#62;form_richtext(&#34;Description&#34;, &#34;desc&#34;, 405, 10);
+
+
+        $_position = Array ();
+        &#47;&#47; First retrieve the last stored image order, but take only those which are still marked as visible
+        foreach ($this-&#62;get(&#34;ddimageorder&#34;) AS $i)
+        {
+          $img_id = $this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;);
+          if ($img_id!=0 AND $this-&#62;getI(&#34;view&#34;.$i))
+          {
+            $_position[]=$i;
+          }
+        }
+        &#47;&#47; Then append images not yet in the position array
+        for ($i=1;$i&#60;=20;$i++)
+        {
+          $img_id = $this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;);
+          if ($img_id!=0 AND $this-&#62;getI(&#34;view&#34;.$i) AND !in_array($i,$_position))
+          {
+            $_position[]=$i;
+          }
+        }
+
+        if (count($_position)!=0)
+        {
+          $this-&#62;form_headline(&#34;Images Order&#34;);
+          $this-&#62;set(&#34;ddimageorder&#34;, $_position);
+          $this-&#62;form_ddpositioner(&#34;&#34;, &#34;ddimageorder&#34;, count($_position), &#34;dd_thumb&#34;);
+        }
+
+        break;
+      default:
+
+
+        for ($i = 1; $i &#60;= 10; $i ++)
+        {
+          $j = (($block_nr-1)*10)+$i;
+
+          $this-&#62;form_headline(&#34;Image &#34;. $j);
+          $this-&#62;form_textfield(&#34;Title&#47;Alt-Text&#34;, &#34;titel&#34;. $j, 400);
+          $this-&#62;form_textarea(&#34;Description&#34;, &#34;text&#34;. $j, 400, 2);
+          $this-&#62;form_image_selector(&#34;Image&#34;, &#34;image&#34;. $j, &#34;Gallery&#34;, 1);
+          $this-&#62;form_checkbox(&#34;&#34;,&#34;view&#34;. $j,&#34;view&#34;);
+        }
+
+        break;
+    }
+  }
+
+  &#47;**
+   * Use thumbnail of the first image of this gallery as identifying thumbnail within the edit view
+   * 
+   * this method ist always called upon store after editing.
+   *&#47;
+  function attachKeyFields()
+  {
+    $img_id = $this-&#62;getI(&#34;image1_img_id&#34;);
+    if ($img_id == 0){$img_id=4;}
+    $this-&#62;setThumbnail($img_id);
+  }
+
+  &#47;**
+   * retrieve an Array with display information for all images of this gallery
+   *
+   * @return array
+   *&#47;
+  function getImagesArray()
+  {
+    $_images = Array();
+    $i=0;
+    foreach ($this-&#62;get(&#34;ddimageorder&#34;) AS $nr)
+    {
+      $_image = $this-&#62;getImageArrayForImageNumber($nr);
+      if ($_image)
+      {
+        $i++;
+        $_image[&#34;pos&#34;]=$i;
+        $_images[] = $_image;
+      }
+    }
+    return ($_images);
+  }
+
+  &#47;**
+   * retrieve an Array with display information for image with given number
+   *&#47;
+  function getImageArrayForImageNumber($nr)
+  {
+    $img_id = $this-&#62;getI(&#34;image&#34;.$nr.&#34;_img_id&#34;);
+    if ($img_id!=0 AND ($this-&#62;getI(&#34;view&#34;.$nr)==1 OR $visible==false))
+    {
+      $myImg = get_image($img_id);
+      $_image = Array();
+      $_params = Array(&#34;id&#34;=&#62;$this-&#62;id);
+      $_image[&#34;nr&#34;]=$nr;
+      $_image[&#34;url_detail&#34;]=$myImg-&#62;url;
+      $_image[&#34;x&#34;]=$myImg-&#62;x;
+      $_image[&#34;y&#34;]=$myImg-&#62;y;
+      $myImg-&#62;selectVersion(&#34;thumb&#34;);
+      $_image[&#34;url_thumb&#34;]=$myImg-&#62;url;
+      $_image[&#34;title&#34;]=$this-&#62;get(&#34;titel&#34;.$nr);
+      $_image[&#34;alt&#34;]=$this-&#62;get(&#34;titel&#34;.$nr);
+      $_image[&#34;text&#34;]=$this-&#62;get(&#34;text&#34;.$nr);
+
+      $_images[] = $_image;
+      return $_image;
+    }
+    return false;
+  }
+  
+  function getImageArray($pos)
+  {
+   $_posarray = $this-&#62;get(&#34;ddimageorder&#34;); 
+   $nr = $_posarray[$pos-1];
+   return $this-&#62;getImageArrayForImageNumber($nr);
+  }
+
+
+  &#47;**
+   * Display thumbnail of an image drag &#38;amp; drop position i
+   *
+   * @param integer $i
+   *&#47;
+  function dd_thumb($i)
+  {
+    $img_id = $this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;);
+    $myImg = new PhenotypeImage($img_id);
+    $myImg-&#62;display_thumb();
+  }
+
+}
+?&#62;</script>
+	<templates>
+   	</templates>
+</phenotype>

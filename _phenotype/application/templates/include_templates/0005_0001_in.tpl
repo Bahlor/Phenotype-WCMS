@@ -1,0 +1,2 @@
+<meta name="description" content ="{if $description ne ''}{$description}{else}Phenotype WCMS Base Description{/if}"/>
+<meta name="keywords" content= "{if $keywords ne ''}{$keywords}{else}WCMS, CMS, Phenotype, Phenotype WCMS{/if}" />

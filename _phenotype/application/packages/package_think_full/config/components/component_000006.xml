@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>	
+		<com_id>6</com_id>
+		<com_bez>2 Bilder</com_bez>		
+		<com_rubrik>Media</com_rubrik>
+		<com_description></com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * IMG
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeComponent_6 extends PhenotypeComponent
+{
+  public $com_id = 6;
+
+  public $name = &#34;2 Bilder&#34;; &#47;&#47; is shown as label in the editing area
+
+  public function setDefaultProperties()
+  {
+	$this-&#62;set(&#34;_revision&#34;,1);
+  }
+  
+  public function initForm($context)
+  {
+ 	&#47;&#47; Customize input form with form_xy-methods 
+    $this-&#62;form_image_selector(&#34;&#34;,&#34;image1&#34;,&#34;&#34;,true,0,0,0,array(&#34;altandalign&#34;=&#62;false));
+    $this-&#62;form_image_selector(&#34;&#34;,&#34;image2&#34;,&#34;&#34;,true,0,0,0,array(&#34;altandalign&#34;=&#62;false));
+  }
+
+  public function render($context)
+  {
+	&#47;&#47; Example:
+		
+	&#47;&#47; Initialize template access (=&#62;$mySmarty)  
+    eval ($this-&#62;initRendering());
+
+
+
+		if ($this-&#62;getI(&#34;image1_img_id&#34;)!=0 &#38;&#38; $this-&#62;getI(&#34;image2_img_id&#34;)!=0)
+		{
+			$myImg = new PhenotypeImage($this-&#62;get(&#34;image1_img_id&#34;));
+			$mySmarty-&#62;assign(&#34;img1&#34;,$myImg-&#62;render_fixX(310,$this-&#62;get(&#34;image1_alt&#34;)));
+			$myImg = new PhenotypeImage($this-&#62;get(&#34;image2_img_id&#34;));
+			$mySmarty-&#62;assign(&#34;img2&#34;,$myImg-&#62;render_fixX(310,$this-&#62;get(&#34;image2_alt&#34;)));
+		}
+	
+    $html = $mySmarty-&#62;fetch($TPL_1);
+
+    return $html;
+  }
+  
+}</script>
+	<templates>
+<template access="TPL_1">{if $img1 ne &#39;&#39; &#38;&#38; $img2 ne &#39;&#39;}
+&#60;div class=&#34;image grid_8&#34;&#62;
+	&#60;div class=&#34;grid_4 no-padding&#34;&#62;
+		{$img1}
+	&#60;&#47;div&#62;
+	&#60;div class=&#34;grid_4&#34;&#62;
+		{$img2}
+	&#60;&#47;div&#62;
+&#60;&#47;div&#62;
+&#60;div class=&#34;clear&#34;&#62;&#60;&#47;div&#62;
+&#60;br &#47;&#62;
+{&#47;if}</template>
+   	</templates>
+	<componentgroups></componentgroups>
+</phenotype>

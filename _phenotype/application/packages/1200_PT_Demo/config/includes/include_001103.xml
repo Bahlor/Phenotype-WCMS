@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>
+		<inc_id>1103</inc_id>
+		<inc_bez>Breadcrumb</inc_bez>		
+		<inc_rubrik>Navigation</inc_rubrik>
+		<inc_description></inc_description>
+		<inc_usage_layout>1</inc_usage_layout>
+		<inc_usage_includecomponent>0</inc_usage_includecomponent>
+		<inc_usage_page>0</inc_usage_page>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * 	Breadcrumb
+ *
+ *&#47;
+class PhenotypeInclude_1103 extends PhenotypeInclude
+{
+
+
+	public $id = 1103;
+
+	function display()
+	{
+		global $myDB;
+		global $myRequest;
+		global $myPage;
+		global $myPT;
+		global $mySmarty;
+
+
+		$pag_id = $myPage-&#62;pag_id_mimikry;
+
+		if ($myRequest-&#62;check(&#34;pag_id_mik&#34;))
+		{
+			$pag_id = $myRequest-&#62;getI(&#34;pag_id_mik&#34;);
+		}
+
+
+		$myHelper = new PhenotypeNavigationHelper();
+
+		$_pages = $myHelper-&#62;getPagesWithinPath($pag_id);
+
+		&#47;&#47; initialize smarty access, allocate $mySmarty and $TPL_XY placeholder
+		eval ($this-&#62;initRendering());
+		
+		$mySmarty-&#62;assign(&#34;pages&#34;, $_pages);
+		$mySmarty-&#62;display($TPL_1);
+
+	}
+
+
+}
+?&#62;</script>
+	<templates>
+<template access="TPL_1">&#60;div id=&#34;breadcrumb&#34;&#62;&#60;br&#47;&#62;&#60;br&#47;&#62;
+{foreach from=$pages item=pag_id name=pages}
+&#60;a href=&#34;{url_for_page pag_id=$pag_id}&#34;&#62;{title_of_page pag_id=$pag_id}&#60;&#47;a&#62;
+{if !$smarty.foreach.pages.last} -&#62; {&#47;if}
+{&#47;foreach}
+&#60;&#47;div&#62;</template>
+   	</templates>
+</phenotype>

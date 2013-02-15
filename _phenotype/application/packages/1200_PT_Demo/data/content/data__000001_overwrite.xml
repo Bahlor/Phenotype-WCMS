@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>
+		<con_id>1601</con_id>
+		<dat_id>1</dat_id>
+		<dat_id_local>1</dat_id_local>
+		<importmethod>overwrite</importmethod>
+		<buildindex>1</buildindex>
+	</meta>
+	<content>
+	<dat_uid>73cd99c44324e9319262cabb7f4ae105</dat_uid>
+<dat_bez>Demonstration Gallery</dat_bez>
+<usr_id_creator>13</usr_id_creator>
+<dat_creationdate>1206121242</dat_creationdate>
+<usr_id>13</usr_id>
+<dat_date>1226757312</dat_date>
+<dat_pos>0</dat_pos>
+<dat_status>1</dat_status>
+<med_id_thumb>20</med_id_thumb>
+<dat_fullsearch>Demonstration Gallery | Demonstration Gallery | Array | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | Some flower images from photocase.com. | Flower 1 | Text 1 | 20 | Flower 2 | Text 2 | 17 | Flower 3 | Text 3 | 18 | Flower 4 | Text 4 | 19 | Flower 5 | Text 5 | 12 | Flower 6 | Text 6 | 16 | Flower 7 | Text 7 | 15 | Flower 8 | Text 8 | 0 |  |  | 0 |  |  | 0</dat_fullsearch>
+
+		<dat_props>YTo1Mzp7czozOiJiZXoiO3M6MjE6IkRlbW9uc3RyYXRpb24gR2FsbGVyeSI7czoxMjoiZGRpbWFnZW9yZGVyIjthOjc6e2k6MDtzOjE6IjEiO2k6MTtzOjE6IjIiO2k6MjtzOjE6IjMiO2k6MztzOjE6IjQiO2k6NDtzOjE6IjUiO2k6NTtzOjE6IjYiO2k6NjtzOjE6IjciO31zOjU6InZpZXcxIjtpOjE7czo1OiJ2aWV3MiI7aToxO3M6NToidmlldzMiO2k6MTtzOjU6InZpZXc0IjtpOjE7czo1OiJ2aWV3NSI7aToxO3M6NToidmlldzYiO2k6MTtzOjU6InZpZXc3IjtpOjE7czo1OiJ2aWV3OCI7aToxO3M6NToidmlldzkiO2k6MTtzOjY6InZpZXcxMCI7aToxO3M6NjoidmlldzExIjtpOjE7czo2OiJ2aWV3MTIiO2k6MTtzOjY6InZpZXcxMyI7aToxO3M6NjoidmlldzE0IjtpOjE7czo2OiJ2aWV3MTUiO2k6MTtzOjY6InZpZXcxNiI7aToxO3M6NjoidmlldzE3IjtpOjE7czo2OiJ2aWV3MTgiO2k6MTtzOjY6InZpZXcxOSI7aToxO3M6NjoidmlldzIwIjtpOjE7czo0OiJkZXNjIjtzOjgwOiI8cD5Tb21lIGZsb3dlciBpbWFnZXMgZnJvbSA8YSBocmVmPSJodHRwOi8vcGhvdG9jYXNlLmNvbSI+cGhvdG9jYXNlLmNvbTwvYT4uPC9wPiI7czo2OiJ0aXRlbDEiO3M6ODoiRmxvd2VyIDEiO3M6NToidGV4dDEiO3M6NjoiVGV4dCAxIjtzOjEzOiJpbWFnZTFfaW1nX2lkIjtzOjI6IjIwIjtzOjY6InRpdGVsMiI7czo4OiJGbG93ZXIgMiI7czo1OiJ0ZXh0MiI7czo2OiJUZXh0IDIiO3M6MTM6ImltYWdlMl9pbWdfaWQiO3M6MjoiMTciO3M6NjoidGl0ZWwzIjtzOjg6IkZsb3dlciAzIjtzOjU6InRleHQzIjtzOjY6IlRleHQgMyI7czoxMzoiaW1hZ2UzX2ltZ19pZCI7czoyOiIxOCI7czo2OiJ0aXRlbDQiO3M6ODoiRmxvd2VyIDQiO3M6NToidGV4dDQiO3M6NjoiVGV4dCA0IjtzOjEzOiJpbWFnZTRfaW1nX2lkIjtzOjI6IjE5IjtzOjY6InRpdGVsNSI7czo4OiJGbG93ZXIgNSI7czo1OiJ0ZXh0NSI7czo2OiJUZXh0IDUiO3M6MTM6ImltYWdlNV9pbWdfaWQiO3M6MjoiMTIiO3M6NjoidGl0ZWw2IjtzOjg6IkZsb3dlciA2IjtzOjU6InRleHQ2IjtzOjY6IlRleHQgNiI7czoxMzoiaW1hZ2U2X2ltZ19pZCI7czoyOiIxNiI7czo2OiJ0aXRlbDciO3M6ODoiRmxvd2VyIDciO3M6NToidGV4dDciO3M6NjoiVGV4dCA3IjtzOjEzOiJpbWFnZTdfaW1nX2lkIjtzOjI6IjE1IjtzOjY6InRpdGVsOCI7czo4OiJGbG93ZXIgOCI7czo1OiJ0ZXh0OCI7czo2OiJUZXh0IDgiO3M6MTM6ImltYWdlOF9pbWdfaWQiO3M6MToiMCI7czo2OiJ0aXRlbDkiO3M6MDoiIjtzOjU6InRleHQ5IjtzOjA6IiI7czoxMzoiaW1hZ2U5X2ltZ19pZCI7czoxOiIwIjtzOjc6InRpdGVsMTAiO3M6MDoiIjtzOjY6InRleHQxMCI7czowOiIiO3M6MTQ6ImltYWdlMTBfaW1nX2lkIjtzOjE6IjAiO30=</dat_props>
+		<sequence_data>
+		</sequence_data>
+	</content>
+</phenotype>

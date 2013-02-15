@@ -1,0 +1,1 @@
+<div class="grid_8">{$table}</div>{$date|date_format:"#time_format#"}

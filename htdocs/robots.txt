@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: /css/
+Disallow: /images/
+Disallow: /_phenotype/
+Disallow: /js/
+Disallow: /media/

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+		<inc_id>1</inc_id>
+		<inc_bez>Main Navigation</inc_bez>		
+		<inc_rubrik>Navigation</inc_rubrik>
+		<inc_description></inc_description>
+		<inc_usage_layout>1</inc_usage_layout>
+		<inc_usage_includecomponent>0</inc_usage_includecomponent>
+		<inc_usage_page>0</inc_usage_page>
+	</meta>
+	<script>&#60;?php 
+&#47;** 
+ * Main navigation
+ * 
+ * @package phenotype 
+ * @subpackage application 
+ *&#47; 
+class PhenotypeInclude_1 extends PhenotypeInclude 
+{ 
+   
+  public $id = 1; 
+   
+  private function getActivePath($path=array()) { 
+      global $myPage; 
+      $p = new PhenotypeNavigationHelper(); 
+      $path = $p-&#62;getPagesWithinPath($myPage-&#62;id); 
+      return $path; 
+  } 
+   
+  private function getPages($pag_id=0,$exclude=array(),$path=array()) { 
+      $p = new PhenotypeNavigationHelper(); 
+      $pages = $p-&#62;getTree($pag_id,array(),1,1); 
+      $npages=array(); 
+      if(count($pages)) { 
+          global $myPage; 
+          foreach($pages as $key =&#62; $val) { 
+              if(!in_array($key,$exclude)) { 
+                  $active=false; 
+                  $subs=array(); 
+                  if($myPage-&#62;id == $key || in_array($key,$path)) { $active = true; }
+                  $subs = $this-&#62;getPages($key,$exclude,$path); 
+                  $npages[] = array(&#39;id&#39;=&#62;$key,&#39;active&#39;=&#62;$active,&#39;subs&#39;=&#62;$subs);
+              } 
+          } 
+      } 
+       
+      return $npages; 
+  } 
+
+  public function display() 
+  { 
+    global $myDB, $myPage, $myRequest; 
+     
+    &#47;&#47; Build main pages 
+    $pages = $this-&#62;getPages(0,array(0=&#62;1),$this-&#62;getActivePath()); 
+         
+    &#47;&#47; Initialize template access (=&#62;$mySmarty)  
+    eval ($this-&#62;initRendering());     
+     
+    $mySmarty-&#62;assign(&#39;pages&#39;,$pages); 
+    $mySmarty-&#62;assign(&#39;lng_id&#39;,$myPage-&#62;lng_id);
+    $mySmarty-&#62;display($TPL_1); 
+  } 
+
+} 
+?&#62;</script>
+	<templates>
+<template access="TPL_1">{foreach from=$pages item=&#34;p&#34;}
+	&#60;li{if $p.active} class=&#34;active&#34;{&#47;if}&#62;&#60;a href=&#34;{url_for_page pag_id=$p.id lng_id=$lng_id}&#34; title=&#34;Gehe zu {title_of_page pag_id=$p.id lng_id=$lng_id}&#34;&#62;{title_of_page pag_id=$p.id lng_id=$lng_id}&#60;&#47;a&#62;
+	{if $p.subs|@count ne 0}
+	&#60;ul&#62;
+	{foreach from=$p.subs item=&#34;s&#34; name=&#34;subs&#34;}
+		&#60;li class=&#34;{if $s.active}active{&#47;if}{if $smarty.foreach.subs.last} last{&#47;if}&#34;&#62;&#60;a href=&#34;{url_for_page pag_id=$s.id lng_id=$lng_id}&#34; title=&#34;Gehe zu {title_of_page pag_id=$s.id lng_id=$lng_id}&#34;&#62;{title_of_page|replace:&#34; &#34;:&#34;&#38;nbsp;&#34; pag_id=$s.id lng_id=$lng_id}&#60;&#47;a&#62;&#60;&#47;li&#62;	
+	{&#47;foreach}
+	&#60;&#47;ul&#62;
+	{&#47;if}
+	&#60;&#47;li&#62;
+{&#47;foreach}</template>
+   	</templates>
+</phenotype>

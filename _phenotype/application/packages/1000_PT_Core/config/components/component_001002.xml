@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>	
+		<com_id>1002</com_id>
+		<com_bez>HTML</com_bez>		
+		<com_rubrik>System</com_rubrik>
+		<com_description>## Component 1002 - HTML</com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * HTML component
+ * 
+ * @package phenotype
+ * @subpackage application
+ *
+ *&#47;
+class PhenotypeComponent_1002 extends PhenotypeComponent
+{
+	public $com_id = 1002;
+	public $name = &#34;HTML&#34;;
+
+	public function setDefaultProperties()
+	{
+		$this-&#62;set(&#34;_revision&#34;,1);
+	}
+	
+  	public function initForm($context)
+  	{
+ 		&#47;&#47; Customize input form with form_xy-methods 
+ 	
+    	$this-&#62;form_html(&#34;&#34;,&#34;html&#34;,405,15);
+  	}
+	
+	public function render($context)
+	{
+		$html = $this-&#62;get(&#34;html&#34;);
+
+		&#47;&#47; Remove PHP-Tags so nobody can insert code
+		$html = mb_ereg_replace(&#34;&#60;\?[^&#62;]*&#62;&#34;,&#34;&#34;,$html); &#47;&#47; matching normal and short opening tags
+		$html = mb_ereg_replace(&#34;&#60;\%[^&#62;]*&#62;&#34;,&#34;&#34;,$html); &#47;&#47; matching ASP-style tags
+
+		return $html;
+	}
+
+	public function setFullSearch()
+	{
+		$s = $this-&#62;get(&#34;html&#34;);
+		&#47;&#47; Remove all tags
+		$s = mb_ereg_replace(&#34;&#60;[^&#62;]*&#62;&#34;,&#34;&#34;,$s);
+		return ($s);
+	}	
+	
+	public function displayXML()
+	{
+  	?&#62;
+  	&#60;component com_id=&#34;1002&#34; type=&#34;HTML&#34;&#62;
+  	&#60;content&#62;
+  	&#60;html&#62;&#60;?php echo $this-&#62;getX(&#34;html&#34;);?&#62;&#60;&#47;html&#62;
+    &#60;&#47;content&#62;
+    &#60;&#47;component&#62;
+  	&#60;?php 
+  	return true;
+	}
+}</script>
+	<templates>
+   	</templates>
+	<componentgroups><group>
+			<cog_id>1</cog_id>
+			<cog_bez>Default</cog_bez>
+			<cog_description>## Default Component Group</cog_description>
+			<cog_pos>0</cog_pos>
+		  </group></componentgroups>
+</phenotype>

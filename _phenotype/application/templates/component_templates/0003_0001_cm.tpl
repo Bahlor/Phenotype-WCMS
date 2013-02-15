@@ -1,0 +1,1 @@
+{if $headline ne ''}<div class="grid_8"><h3>{$headline}</h3></div>{/if}

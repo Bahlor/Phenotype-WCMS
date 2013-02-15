@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+		<inc_id>5</inc_id>
+		<inc_bez>Meta Tags</inc_bez>		
+		<inc_rubrik>Meta</inc_rubrik>
+		<inc_description></inc_description>
+		<inc_usage_layout>1</inc_usage_layout>
+		<inc_usage_includecomponent>0</inc_usage_includecomponent>
+		<inc_usage_page>0</inc_usage_page>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Meta Daten
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeInclude_5 extends PhenotypeInclude
+{
+  
+  public $id = 5;
+
+  public function display()
+  {
+    global $myDB, $myPage, $myRequest;
+	
+	&#47;&#47; Initialize template access (=&#62;$mySmarty) 
+	eval ($this-&#62;initRendering());	
+
+	$keywords	=	$myPage-&#62;row[&#39;pag_searchtext&#39;];
+	$description=	$myPage-&#62;row[&#39;pag_comment&#39;];
+
+	if(trim($keywords) == &#39;&#39; || empty($keywords)) 	{ $keywords 	= &#39;&#39;;	}
+	if($description == title_of_page($myPage-&#62;id)) 	{ $description 	= &#39;&#39;; 	}
+	
+	$mySmarty-&#62;assign(&#39;keywords&#39;,		strip_tags(str_replace(array(&#39;\r\n&#39;, &#39;\n&#39;, &#39;\r&#39;),&#39; &#39;,$keywords)));
+	$mySmarty-&#62;assign(&#39;description&#39;,	strip_tags(str_replace(array(&#39;\r\n&#39;, &#39;\n&#39;, &#39;\r&#39;),&#39; &#39;,$description)));
+	$mySmarty-&#62;display($TPL_1);
+  }
+
+}
+?&#62;</script>
+	<templates>
+<template access="TPL_1">&#60;meta name=&#34;description&#34; content =&#34;{if $description ne &#39;&#39;}{$description}{else}Der Wasserverband Kinzig (WVK) ist die schl&#38;uuml;ssige Antwort der Region Main-Kinzig auf die Herausforderungen einer sich wandelnden Wasserwirtschaft.{&#47;if}&#34;&#47;&#62;
+&#60;meta name=&#34;keywords&#34; content= &#34;{if $keywords ne &#39;&#39;}{$keywords}{else}Wasserverband Kinzig, Kinzigtalsperre, Hochwasserschutz, Trinkwasser, Regenerative Energien, Trinkwasserbeschaffung, Klimawandel, Geothermie, Photovoltaik, Energieeffizienz, Kinzig-Stausee{&#47;if}&#34; &#47;&#62;</template>
+   	</templates>
+</phenotype>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>	
+		<com_id>1103</com_id>
+		<com_bez>Enumeration</com_bez>		
+		<com_rubrik>Text</com_rubrik>
+		<com_description>## Baustein 1103 - Enumeration</com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Enumeration
+ * 
+ * @package phenotype
+ * @subpackage application
+ *&#47; 
+class PhenotypeComponent_1103 extends PhenotypeComponent
+{
+	public $com_id= 1103;
+	public $name = &#34;Enumeration&#34;;
+
+	public function setDefaultProperties()
+	{
+		$this-&#62;set(&#34;_revision&#34;,1);
+		$this-&#62;set(&#34;enum_count&#34;,3);
+	}
+
+	public function initForm($context)
+	{
+		&#47;&#47; Customize input form with form_xy-methods
+		$this-&#62;form_textfield(&#34;Headline&#34;,&#34;headline&#34;,300);
+		$this-&#62;form_enumeration(&#34;&#34;,&#34;enum&#34;);
+	}
+
+	public function setFullSearch()
+	{
+		$s=&#34;&#34;;
+		for ($i=1;$i&#60;=$this-&#62;get(&#34;text_count&#34;);$i++)
+		{
+			$s .= $this-&#62;get(&#34;text_item&#34;.$i) . &#34;|&#34;;
+		}
+		return ($s);
+	}
+
+	public function render($context)
+	{
+		&#47;&#47; Notwendig, um die Smartyengine richtig zu initialisieren
+		eval ($this-&#62;initRendering());
+		global $myPT;
+
+		$html =&#39;&#39;;
+		if ($this-&#62;get(&#34;headline&#34;)!=&#34;&#34;)
+		{
+			$html .=&#39;&#60;h1&#62;&#39;.$this-&#62;getH(&#34;headline&#34;).&#39;&#60;&#47;h1&#62;&#39;;
+		}
+
+
+		$html .= &#39;&#60;ul&#62;&#39;;
+		for ($i=1;$i&#60;=$this-&#62;getI(&#34;enum_count&#34;);$i++)
+		{
+			$text = $this-&#62;getH(&#34;enum_item&#34;.$i);
+			if ($text !=&#34;&#34;)
+			{
+				$html .= &#39;&#60;li&#62;&#39;.$text.&#39;&#60;&#47;li&#62;&#39;;
+			}
+		}
+		$html .=&#39;&#60;&#47;ul&#62;&#39;;
+		return $html;
+	}
+}</script>
+	<templates>
+   	</templates>
+	<componentgroups><group>
+			<cog_id>1</cog_id>
+			<cog_bez>Default</cog_bez>
+			<cog_description># default components</cog_description>
+			<cog_pos>0</cog_pos>
+		  </group></componentgroups>
+</phenotype>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>	
+		<com_id>2</com_id>
+		<com_bez>H2</com_bez>		
+		<com_rubrik>Text</com_rubrik>
+		<com_description></com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * H2
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeComponent_2 extends PhenotypeComponent
+{
+  public $com_id = 2;
+
+  public $name = &#34;H2&#34;; &#47;&#47; is shown as label in the editing area
+
+  public function setDefaultProperties()
+  {
+	$this-&#62;set(&#34;_revision&#34;,1);
+  }
+  
+  public function initForm($context)
+  {
+ 	&#47;&#47; Customize input form with form_xy-methods 
+    $this-&#62;form_textfield(&#34;Text&#34;,&#34;headline&#34;,300);
+  }
+
+  public function render($context)
+  {
+	&#47;&#47; Example:
+		
+	&#47;&#47; Initialize template access (=&#62;$mySmarty)  
+    eval ($this-&#62;initRendering());
+
+    $mySmarty-&#62;assign(&#34;headline&#34;,$this-&#62;getH(&#34;headline&#34;));
+    $html = $mySmarty-&#62;fetch($TPL_1);
+
+    return $html;
+  }
+  
+}</script>
+	<templates>
+<template access="TPL_1">{if $headline ne &#39;&#39;}&#60;div class=&#34;grid_8&#34;&#62;&#60;h2&#62;{$headline}&#60;&#47;h2&#62;&#60;&#47;div&#62;{&#47;if}</template>
+   	</templates>
+	<componentgroups></componentgroups>
+</phenotype>

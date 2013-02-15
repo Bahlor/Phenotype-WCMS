@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+		<con_id>1</con_id>
+		<con_bez>Galerie</con_bez>
+		<con_rubrik>Media</con_rubrik>
+		<con_description></con_description>
+		<con_anlegen>1</con_anlegen>
+		<con_bearbeiten>1</con_bearbeiten>
+		<con_loeschen>1</con_loeschen>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Galerie
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeContent_1 extends PhenotypeContent{
+    var $content_type = 1;
+    var $skins = Array ();
+
+    var $_blocks = Array (&#34;Eigenschaften&#34;);
+    var $_icons = Array (&#34;b_konfig.gif&#34;);
+    
+    protected $dat_id_min = 1000;
+    protected $dat_id_max = 1999;
+    
+    function setDefaultProperties()
+    {
+    	$this-&#62;set(&#34;bez&#34;,&#34;Neue Galerie&#34;);
+    	$this-&#62;set(&#34;name&#34;,&#34;&#34;);
+    	$this-&#62;set(&#39;date&#39;,time());
+    	$this-&#62;set(&#34;desc&#34;,&#34;&#34;);
+    	$this-&#62;set(&#34;anzahl&#34;, 0);
+    }
+
+    function init($row, $block_nr = 0)
+    {
+        parent :: init($row, $block_nr);
+        &#47;&#47; Reiter mit den Anzahl der Bilder mitwachsen lassen
+        $anzahl = $this-&#62;getI(&#34;maximage&#34;);
+        $seiten = floor($anzahl &#47; 10) + 1;
+
+        for ($i = 1; $i &#60;= $seiten; $i ++)
+        {
+            $this-&#62;_blocks[] = ($i -1) * 10 + 1;
+            $this-&#62;_icons[] = &#34;b_konfig.gif&#34;;
+        }
+
+        &#47;&#47; Hier das Formular und damit auch die Updatefunktion initialisieren
+        if ($block_nr == 0)
+        {
+        	global $myDB;
+        	$sql 	= &#39;SELECT DISTINCT(`med_logical_folder1`) FROM `media` ORDER BY `med_logical_folder1`&#39;;
+        	$rs		=	$myDB-&#62;query($sql);
+        	$gals	=	array();
+        	if(mysql_num_rows($rs)) {
+	        	while($row=mysql_fetch_assoc($rs)) {
+		        	$gals[$row[&#39;med_logical_folder1&#39;]]	=	$row[&#39;med_logical_folder1&#39;];
+	        	}
+        	}
+        
+        	$this-&#62;form_textfield(&#34;Bezeichnung&#34;,&#34;name&#34;,200);
+        	$this-&#62;form_richtext(&#34;Beschreibung&#34;,&#34;desc&#34;,400,10);
+        	$this-&#62;form_selectbox(&#39;Basis-Import&#39;,&#39;base_import&#39;,$gals);
+        	$this-&#62;form_date(&#39;Datum&#39;,&#39;date&#39;);
+            if ($anzahl &#62; 1) {
+            	$uplift = ($block_nr -1) * 10;
+                $this-&#62;form_headline(&#34;Bildreihenfolge&#34;);
+                $_position = Array ();
+                for ($i = 1; $i &#60;= $anzahl; $i ++) {
+                    if ($this-&#62;get(&#34;view&#34;.$i)==1) {
+                        $_position[] = $this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;);
+                    }
+                }
+              	if($this-&#62;getI(&#39;anzahl&#39;)&#60;1){
+                	$this-&#62;set(&#39;anzahl&#39;,1);
+            	}
+            	$this-&#62;clear(&#34;ddimageorder&#34;);
+            	$this-&#62;form_ddpositioner(&#39;&#39;, &#39;ddimageorder&#39;, $anzahl, &#39;dd_thumb&#39;);
+            }
+        }
+
+        if ($block_nr &#62; 0) {
+            $uplift = ($block_nr -1) * 10;
+            for ($i = 1; $i &#60;= 10; $i ++) {
+                $this-&#62;form_headline(&#34;Bild &#34;. ($i + $uplift));
+                $this-&#62;form_textfield(&#34;Titel&#47;Alt-Text&#34;, &#34;titel&#34;. ($i + $uplift), 400);
+                &#47;&#47;$this-&#62;form_textarea(&#34;Beschreibung&#34;, &#34;text&#34;. ($i + $uplift), 400, 2);
+                if($this-&#62;get(&#39;name&#39;)) {
+	                $name = urlstrip($this-&#62;get(&#39;name&#39;));
+                } else {
+	                $name = &#34;Galeriebilder&#34;.$this-&#62;id;
+                }
+                $this-&#62;form_image_selector(&#34;Bild&#34;, &#34;image&#34;. ($i + $uplift), $name, 1);
+                $this-&#62;form_checkbox(&#34;&#34;,&#34;view&#34;. ($i + $uplift),&#34;anzeigen&#34;,1);
+            }
+        }
+    }
+
+    function attachKeyFields() {
+    	$this-&#62;setKey1($this-&#62;get(&#34;datum&#34;));
+        $this-&#62;setKey2($this-&#62;get(&#34;wann&#34;));
+        if(!$this-&#62;get(&#34;bis&#34;) || $this-&#62;get(&#34;bis&#34;) &#60;= $this-&#62;get(&#34;wann&#34;)) {
+            $this-&#62;setKey3($this-&#62;get(&#34;wann&#34;));
+        } else {
+            $this-&#62;setKey3($this-&#62;get(&#34;bis&#34;));
+        }
+
+        if($this-&#62;get(&#34;tbild_img_id&#34;)) {
+            $this-&#62;setThumbnail($this-&#62;get(&#34;tbild_img_id&#34;));
+        }
+    }
+
+    function store() {
+        global $mySUser;
+        global $myRequest;
+        global $myDB;
+       
+       if($this-&#62;get(&#39;base_import&#39;) != &#39;&#39;) {
+	        	$gal 	=	$this-&#62;get(&#39;base_import&#39;);
+	        	$this-&#62;set(&#39;base_import&#39;,&#39;&#39;);
+	        	
+	        	$sql	=	&#39;SELECT `med_id` FROM `media` WHERE `med_logical_folder1` = &#34;&#39;.$gal.&#39;&#34; ORDER BY `med_creationdate`&#39;;
+	        	$rs		=	$myDB-&#62;query($sql);
+	        	
+	        	$images	=	array();
+	        	
+	        	if(mysql_num_rows($rs)) {
+	        		$i = 1;
+	        		while($row=mysql_fetch_assoc($rs)) {
+		        		$this-&#62;set(&#39;image&#39;.$i.&#39;_img_id&#39;,$row[&#39;med_id&#39;]);
+		        		$this-&#62;set(&#39;view&#39;.$i,1);
+		        		$i++;
+		        	}
+		        	$this-&#62;set(&#39;maximage&#39;,(int)$i);
+	        	}
+        	}
+        
+        $this-&#62;precalcImages();
+
+        if ($myRequest-&#62;getI(&#34;b&#34;) == 1) {
+            $anzahl = $this-&#62;getI(&#34;maximage&#34;);
+            &#47;&#47; Nachsehen, ob neue Bilder hinzugefŸgt wurden
+            $pfad = TEMPPATH.&#34;contentupload&#47;&#34;.$this-&#62;content_type.&#34;&#47;&#34;.$mySUser-&#62;id.&#34;&#47;bilder&#47;&#34;;
+            $fp = @ opendir($pfad);
+            $_files = Array ();
+            if ($fp) {
+            	while ($file = readdir($fp)) {
+                    if ($file != &#34;.&#34; &#38;&#38; $file != &#34;..&#34;) {
+                        if (substr($file, 0, 2) != &#34;t_&#34;) {
+                            $_files[] = $file;
+                        }
+                    }
+                }
+            }
+
+            if (count($_files != 0)) {
+                asort($_files);
+                $myMB = new PhenotypeMediabase();
+                $i = $this-&#62;get(&#34;maximage&#34;);
+                foreach ($_files AS $file) {
+                    $i ++;
+                    if (!file_exists($pfad.&#34;t_&#34;.$file)) {
+                        $myMB-&#62;createThumbnailFromJpeg($pfad.$file, $pfad.&#34;t_&#34;.$file, 100);
+                    }
+                    $med_id = $myMB-&#62;import($file, 0, &#34;Galerie&#47;Upload &#34;.$this-&#62;id, $pfad);
+                    $this-&#62;set(&#34;image&#34;.$i.&#34;_img_id&#34;, $med_id);
+                    $this-&#62;set(&#34;view&#34;.$i,1);
+
+                    $myMB-&#62;importImageVersionFromUrl($pfad.&#34;t_&#34;.$file,&#34;thumb&#34;,$med_id);
+                    &#47;&#47;$med_id = $myMB-&#62;import(&#34;t_&#34;.$file, 0, &#34;Galerie&#47;WDR 2&#47;&#34;.$this-&#62;id, $pfad);
+                    &#47;&#47;$this-&#62;set(&#34;small&#34;.$i.&#34;_img_id&#34;, $med_id);
+                }
+                $this-&#62;precalcImages();
+            }
+
+            &#47;&#47; Auf die erste Seite mit einem neuen Bild springen,
+            &#47;&#47; falls neue Bilder hinzugefŸgt wurden
+            if ($this-&#62;getI(&#34;maximage&#34;)!=$anzahl) {
+                $seiten = floor(($anzahl+1) &#47; 10) + 1;
+                $this-&#62;setAlternateUpdateUrl(&#34;content_edit.php?id=&#34;.$this-&#62;id.&#34;&#38;uid=&#34;.$this-&#62;uid.&#34;&#38;b=&#34;. ($seiten +1));
+            }
+
+            &#47;&#47; Ordner anschlie§end leeren
+            $pfad = TEMPPATH.&#34;contentupload&#47;&#34;.$this-&#62;content_type.&#34;&#47;&#34;.$mySUser-&#62;id.&#34;&#47;bilder&#47;&#34;;
+            $fp = @ opendir($pfad);
+            if ($fp) {
+                while ($file = readdir($fp)) {
+                    if ($file != &#34;.&#34; &#38;&#38; $file != &#34;..&#34;) {
+                        unlink ($pfad . $file);
+                    }
+                }
+            }
+        }
+
+        if ($myRequest-&#62;getI(&#34;b&#34;) == 0 AND is_array($this-&#62;get(&#34;ddimageorder&#34;))) {
+            $_position = $this-&#62;get(&#34;ddimageorder&#34;);
+            $_images = Array ();
+            $neworder = array();
+            for($i=1;$i&#60;(count($_position)+1);$i++) {
+           		&#47;&#47; build array
+           		$_images[$i][&#39;img_id&#39;] = $this-&#62;getI(&#34;image&#34;.$_position[$i-1].&#34;_img_id&#34;);
+           		$_images[$i][&#39;titel&#39;] = $this-&#62;get(&#34;titel&#34;.$_position[$i-1]);
+           		$_images[$i][&#39;text&#39;] = $this-&#62;get(&#34;text&#34;.$_position[$i-1]);
+           		$_images[$i][&#39;view&#39;] = 1;
+           		if($i &#60;= count($_position)) {
+           			$neworder[$i-1] = $_position[$i-1];
+           		}
+            }
+            
+            for($i=(count($_images)+1);$i&#60;$this-&#62;get(&#34;maximage&#34;);$i++) {
+            	&#47;&#47; add not viewable
+            	$_images[$i][&#39;img_id&#39;] = $this-&#62;getI(&#34;image&#34;.$_position[$i].&#34;_img_id&#34;);
+            	$_images[$i][&#39;titel&#39;] = $this-&#62;get(&#34;titel&#34;.$_position[$i]);
+            	$_images[$i][&#39;text&#39;] = $this-&#62;get(&#34;text&#34;.$_position[$i]);
+            	$_images[$i][&#39;view&#39;] = 0;
+            }
+            
+            for($i=1;$i&#60;(count($_images)+1);$i++) {
+            	&#47;&#47; set new values
+            	$this-&#62;set(&#34;image&#34;.$i.&#34;_img_id&#34;,$_images[$i][&#39;img_id&#39;]);
+            	$this-&#62;set(&#34;titel&#34;.$i,$_images[$i][&#39;titel&#39;]);
+            	$this-&#62;set(&#34;text&#34;.$i,$_images[$i][&#39;text&#39;]);
+            	$this-&#62;set(&#34;view&#34;.$i,$_images[$i][&#39;view&#39;]);
+            }
+            
+            &#47;&#47;$this-&#62;set(&#34;ddimageorder&#34;,$neworder);
+            $this-&#62;precalcImages();
+        }
+        $this-&#62;set(&#34;bez&#34;,$this-&#62;get(&#34;name&#34;));
+        parent :: store();
+    }
+
+    function precalcImages() {
+        &#47;&#47; to minimze db queries when displaying the gallery an array with all necessary
+        &#47;&#47; informations is precalculated and stored as a content object property
+        
+        $j = 0;
+        $max = 0;
+        $_images = Array ();
+        $i=1;
+        $finish==false;
+        $fin=0;
+        while ($finish==false) {
+            if ($this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;) != 0 AND $this-&#62;getI(&#34;view&#34;.$i)==1) {
+                $j ++;
+                $titel = $this-&#62;get(&#34;titel&#34;.$i);
+                $text = $this-&#62;get(&#34;text&#34;. $i);
+
+                $myImg = new PhenotypeImage($this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;));
+                $url = $myImg-&#62;url;
+                $big = $myImg-&#62;physical_folder.&#34;&#47;&#34;.$myImg-&#62;filename;
+				
+				if($i==1) {
+					if($myImg-&#62;x &#62; 242) {
+						$x = 242;
+						$y = intval($myImg-&#62;y * $x &#47; $myImg-&#62;x);
+					} else {
+						$x = $myImg-&#62;x;
+						$y = $myImg-&#62;y;
+					}
+				} else {
+					if($myImg-&#62;x &#62;= $myImg-&#62;y) {
+						$x = 119;
+						$y = intval($myImg-&#62;y * $x &#47; $myImg-&#62;x);
+					} else {
+						$y = 119;
+						$x = intval($myImg-&#62;x * $y &#47; $myImg-&#62;y);
+					}
+				}
+				
+                &#47;&#47; $x = $myImg-&#62;x;
+                &#47;&#47; $y=$myImg-&#62;y;
+               	$id = $this-&#62;getI(&#39;image&#39;.$i.&#39;_img_id&#39;);
+                $myImg-&#62;selectVersion(&#34;thumb&#34;);
+                $small = $myImg-&#62;physical_folder.&#34;&#47;&#34;.$myImg-&#62;filename;
+                $small = $myImg-&#62;thumburl;
+                $_image = Array ($titel, $text, $small,$big,$x,$y,$url,$id);
+                $_images[$j] = $_image;
+
+                $fin=0;
+            } else {
+            	$fin++;
+            }
+            
+            if($fin&#62;=10) {
+            	$finish=true;
+            }
+            $max=$i;
+            $i++;
+        }
+        $max=$max-10;
+        $this-&#62;set(&#34;anzahl&#34;, $j);
+        $this-&#62;set(&#34;maximage&#34;, $max);
+        $this-&#62;set(&#34;precalc&#34;, $_images);
+    }
+
+    function dd_thumb($i) {
+
+        if ($this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;) != 0) {
+            $big = $this-&#62;getI(&#34;image&#34;.$i.&#34;_img_id&#34;);
+            $myImg = new PhenotypeImage($big);
+            $myImg-&#62;display_maxX(250);
+        } else {
+            echo &#34;Kein Bild zugeordnet.&#34;;
+        }
+    }
+}
+?&#62;</script>
+	<templates>
+   	</templates>
+</phenotype>

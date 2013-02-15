@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>	
+		<com_id>1001</com_id>
+		<com_bez>Richtext</com_bez>		
+		<com_rubrik>Text</com_rubrik>
+		<com_description>## Component 1001 - Richtext
+
+		This basic component fits many needs of simple web pages. It offers headlines, formatted text, images and links.
+		</com_description>
+	</meta>
+	<script>&#60;?php 
+&#47;**
+ * Richtext
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeComponent_1001 extends PhenotypeComponent
+{
+	public $com_id = 1001;
+	public $name = &#34;Richtext&#34;;
+	
+
+	public function setDefaultProperties()
+	{
+		$this-&#62;set(&#34;_revision&#34;,1);
+	}
+
+	
+	public function initForm($context)
+  	{
+  		&#47;&#47; Customize input form with form_xy-methods 
+  		
+  		$this-&#62;form_richtext(&#34;&#34;,&#34;text&#34;,405,15);
+  		$this-&#62;form_selectbox(&#34;Grid&#34;,&#34;grid&#34;,array(0=&#62;&#39;8&#39;,1=&#62;&#39;12&#39;));
+  	}
+
+	public function render($context)
+	{
+
+		&#47;&#47; Initialize template access (=&#62;$mySmarty) 
+		eval ($this-&#62;initRendering());
+
+		$template = $TPL_DEFAULT;
+
+		$grid=8;
+		switch($this-&#62;getI(&#39;grid&#39;)) {
+			case 0:	$grid=8;
+					break;
+			case 1:	$grid=12;
+					break;
+			default:$grid=8;
+					break;
+		}
+
+		$mySmarty-&#62;assign(&#34;text&#34;,$this-&#62;get(&#34;text&#34;));
+		$mySmarty-&#62;assign(&#34;grid&#34;,$grid);
+
+		return $mySmarty-&#62;fetch($template);
+	}
+	
+	public function setFullSearch()
+	{
+		$s = $this-&#62;get(&#34;headline&#34;) . &#34;|&#34; . $this-&#62;get(&#34;text&#34;);
+		return ($s);
+	}
+	
+	public function getEditLabel()
+	{
+		return ($this-&#62;name.&#34; (#&#34;.$this-&#62;id.&#34;)&#34;);
+	}
+
+}</script>
+	<templates>
+<template access="TPL_DEFAULT">&#60;div class=&#34;richtext&#34;&#62;
+{if $headline!=&#34;&#34;}&#60;h1&#62;{$a}{$headline}{$aa}&#60;&#47;h1&#62;{&#47;if}
+{$a}{$image}{$aa}{$text}{$link}
+&#60;&#47;div&#62;
+</template>
+   	</templates>
+	<componentgroups><group>
+			<cog_id>1</cog_id>
+			<cog_bez>Default</cog_bez>
+			<cog_description>## Default</cog_description>
+			<cog_pos>0</cog_pos>
+		  </group></componentgroups>
+</phenotype>

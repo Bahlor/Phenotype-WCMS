@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ext_id>1002</ext_id>
+		<ext_bez>Console</ext_bez>		
+		<ext_rubrik>Development</ext_rubrik>
+		<ext_description></ext_description>
+	</meta>
+	<script>&#60;?php 
+class PhenotypeExtra_1002 extends PhenotypeExtra
+{
+
+	public $id = 1002;
+	public $bez = &#34;Console&#34;;
+
+	function displaySetup()
+	{
+		$this-&#62;form_checkbox(&#34;Color Coding&#34;,&#34;color&#34;,&#34;activate&#34;);
+	}
+
+	function storeConfig()
+	{
+		$this-&#62;store();
+	}
+
+	function displayStart()
+	{
+		global $myLayout;
+		global $mySUser;
+
+		if (PT_CONFIGMODE==0 OR !$mySUser-&#62;hasRight(&#34;superuser&#34;))
+		{
+			$myLayout-&#62;workarea_start_draw();
+			echo &#34;This extra needs super user privileges. Also config mode must be activated.&#34;;
+			$myLayout-&#62;workarea_whiteline();
+			$myLayout-&#62;workarea_stop_draw();
+			return;
+		}
+
+		$myLayout-&#62;workarea_start_draw();
+		$scriptname = &#34;console.inc.php&#34;;
+		 ?&#62;
+		 &#60;form action=&#34;extra_execute.php&#34; method=&#34;post&#34;&#62;
+		 &#60;input type=&#34;hidden&#34; name=&#34;id&#34; value=&#34;1002&#34;&#62;
+		 &#60;table width=&#34;100%&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;0&#34;&#62;
+          &#60;tr&#62;
+            &#60;td class=&#34;tableBody&#34;&#62;
+			&#60;?php 
+			$scriptname = TEMPPATH .&#34;console&#47;&#34; . $scriptname;
+			if ($this-&#62;get(&#34;color&#34;)==1)
+			{
+				echo $myLayout-&#62;form_HTMLTextArea(&#34;skript&#34;,$scriptname,80,30,&#34;PHP&#34;);
+			}
+			else
+			{
+				$s=file_get_contents($scriptname);
+				$s = htmlentities($s);
+				echo $myLayout-&#62;workarea_form_textarea(&#34;&#34;,&#34;skript&#34;,$s,40,630);
+			}
+			 ?&#62;
+			&#60;&#47;td&#62;
+            &#60;&#47;tr&#62;
+			&#60;&#47;table&#62;	 
+	&#60;?php 
+	&#47;&#47; Status
+	$myLayout-&#62;workarea_whiteline();
+	 ?&#62;	
+	 &#60;table width=&#34;100%&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;0&#34;&#62;
+          &#60;tr&#62;
+            &#60;td class=&#34;windowFooterWhite&#34;&#62;&#38;amp;nbsp;&#60;&#47;td&#62;
+            &#60;td align=&#34;right&#34; class=&#34;windowFooterWhite&#34;&#62;
+			&#60;input name=&#34;execute&#34; type=&#34;submit&#34; class=&#34;buttonWhite&#34; style=&#34;width:102px&#34; value=&#34;Execute&#34; onclick=&#34;javascript:return confirm(&#39;Really execute this script?&#39;)&#34;&#62;&#38;amp;nbsp;&#38;amp;nbsp;&#60;input name=&#34;save&#34; type=&#34;submit&#34; class=&#34;buttonWhite&#34; style=&#34;width:102px&#34;value=&#34;Save changes&#34;&#62;&#38;amp;nbsp;&#38;amp;nbsp;
+            &#60;&#47;td&#62;
+          &#60;&#47;tr&#62;
+        &#60;&#47;table&#62;
+	 &#60;?php 
+	 $myLayout-&#62;workarea_stop_draw();
+	 ?&#62;
+	&#60;&#47;form&#62;	 
+  &#60;?php 
+	}
+
+	function execute($myRequest)
+	{
+		global $myAdm;
+		global $myLayout;
+		global $mySUser;
+
+		if (PT_CONFIGMODE==0 OR !$mySUser-&#62;hasRight(&#34;superuser&#34;))
+		{
+			$myLayout-&#62;workarea_start_draw();
+			echo &#34;This extra needs super user privileges. Also config mode must be activated.&#34;;
+			$myLayout-&#62;workarea_whiteline();
+			$myLayout-&#62;workarea_stop_draw();
+			return;
+		}
+
+		if ($myRequest-&#62;check(&#34;save&#34;))
+		{
+			if ($this-&#62;get(&#34;color&#34;)==1)
+			{
+				$code = $myAdm-&#62;decodeRequest_HTMLArea($myRequest-&#62;get(&#34;skript&#34;));
+			}
+			else
+			{
+				$code = $myAdm-&#62;decodeRequest_TextArea($myRequest-&#62;get(&#34;skript&#34;));
+			}
+
+			$scriptname = &#34;console.inc.php&#34;;
+			$scriptname = TEMPPATH .&#34;console&#47;&#34; . $scriptname;
+
+			$fp = fopen ($scriptname, &#34;w&#34;);
+			fputs ($fp,$code);
+			fclose ($fp);
+			@chmod ($scriptname,UMASK);
+
+			$this-&#62;displayStart();
+			return;
+		}
+
+		&#47;&#47; Das Konsolenskript soll ausgeführt werden
+		global $myLayout;
+		$myLayout-&#62;workarea_start_draw();
+
+		 ?&#62;
+		 &#60;form action=&#34;extra_start.php&#34; method=&#34;post&#34;&#62;
+		 &#60;input type=&#34;hidden&#34; name=&#34;id&#34; value=&#34;1002&#34;&#62;
+			 &#60;table width=&#34;100%&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;0&#34;&#62;
+          &#60;tr&#62;
+            &#60;td class=&#34;tableBody&#34;&#62;
+			&#60;iframe src=&#34;config_console_execute.php&#34; width=&#34;640&#34; height=&#34;600&#34; frameborder=&#34;0&#34;&#62;&#60;&#47;iframe&#62;
+			&#60;&#47;td&#62;
+            &#60;&#47;tr&#62;
+			&#60;&#47;table&#62;	 
+	&#60;?php 
+	&#47;&#47; Status
+	$myLayout-&#62;workarea_whiteline();
+	 ?&#62;	
+	 &#60;table width=&#34;100%&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;0&#34;&#62;
+          &#60;tr&#62;
+            &#60;td class=&#34;windowFooterWhite&#34;&#62;&#38;amp;nbsp;&#60;&#47;td&#62;
+            &#60;td align=&#34;right&#34; class=&#34;windowFooterWhite&#34;&#62;
+			&#60;input name=&#34;continue&#34; type=&#34;submit&#34; class=&#34;buttonWhite&#34; style=&#34;width:102px&#34;value=&#34;Continue&#34;&#62;&#38;amp;nbsp;&#38;amp;nbsp;
+            &#60;&#47;td&#62;
+          &#60;&#47;tr&#62;
+        &#60;&#47;table&#62;
+	 &#60;?php 
+	 $myLayout-&#62;workarea_stop_draw();
+	 ?&#62;
+	&#60;&#47;form&#62;	 
+	&#60;?php 
+	}
+
+}
+?&#62;</script>
+	<templates>
+   	</templates>
+		<ext_props>YToxOntzOjU6ImNvbG9yIjtzOjE6IjEiO30=</ext_props>
+</phenotype>

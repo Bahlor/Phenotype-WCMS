@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>	
+		<com_id>1601</com_id>
+		<com_bez>Gallery</com_bez>		
+		<com_rubrik>Demonstration</com_rubrik>
+		<com_description></com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * component to place a gallery (i.e. thumbnail preview of a gallery) within a page
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeComponent_1601 extends PhenotypeComponent
+{
+	public $com_id = 1601;
+	public $name = &#34;Gallery&#34;;
+
+	public function setDefaultProperties()
+	{
+		$this-&#62;set(&#34;_revision&#34;,1);
+	}
+
+	
+	public function initForm($context)
+  	{
+		&#47;&#47; Customize input form with form_xy-methods
+
+		global $myDB;
+		
+		$this-&#62;form_content_selectbox(&#34;&#34;,&#34;dat_id&#34;,PhenotypeApplication::con_id_gallery);
+		
+	}
+
+	public function render($context)
+	{
+		global $myPT, $myPage, $myApp;
+
+		$dat_id = $this-&#62;getI(&#34;dat_id&#34;);
+		if ($dat_id==0)
+		{
+			return;
+		}
+
+		$myCO = new CO_Gallery($dat_id);
+
+		&#47;&#47; get information about gallery images
+		$_images = Array();
+		foreach ($myCO-&#62;getImagesArray() AS $_image)
+		{
+			&#47;&#47; Define url for detail view of an image
+			&#47;&#47; We want to keep our navigation state, so we encode the id of the current page into the url
+			$smartUID = &#34;image&#34;.$_image[&#34;pos&#34;].&#34;,&#34;.$myPage-&#62;id.&#34;.html&#34;;
+			$_image[&#34;url_view&#34;] = url_for_page(PhenotypeApplication::pag_id_galleryview,array(&#34;gal_id&#34;=&#62;$dat_id),null,$smartUID);
+			$_images[]=$_image;
+		}
+
+		eval ($this-&#62;initRendering());
+		$mySmarty-&#62;assign(&#34;gallery&#34;,$myCO);
+		$mySmarty-&#62;assign(&#34;images&#34;,$_images);
+		$html = $mySmarty-&#62;fetch($TPL_1);
+		return $html;
+	}
+
+
+}</script>
+	<templates>
+<template access="TPL_1">&#60;div class=&#34;gallery&#34;&#62;
+&#60;h1&#62;{$gallery-&#62;getH(&#34;bez&#34;)}&#60;&#47;h1&#62;
+{foreach from=$images item=image}
+&#60;div class=&#34;thumbnail&#34;&#62;&#60;a href=&#34;{$image.url_view}&#34;&#62;&#60;img src=&#34;{$image.url_thumb}&#34; alt=&#34;{$image.alt}&#34; title=&#34;{$image.alt}&#34; border=&#34;0&#34; &#47;&#62;&#60;&#47;a&#62;&#60;&#47;div&#62;
+{&#47;foreach}
+{if $gallery-&#62;get(&#34;desc&#34;)!=&#34;&#34;}
+&#60;div class=&#34;clear&#34;&#62;&#60;&#47;div&#62;
+&#60;div&#62;&#60;br&#47;&#62;{$gallery-&#62;get(&#34;desc&#34;)}&#60;br&#47;&#62;&#60;&#47;div&#62;
+{&#47;if}
+&#60;div class=&#34;clear&#34;&#62;&#60;&#47;div&#62;
+&#60;br&#47;&#62;
+&#60;&#47;div&#62;</template>
+   	</templates>
+	<componentgroups><group>
+			<cog_id>1</cog_id>
+			<cog_bez>Default</cog_bez>
+			<cog_description># default components</cog_description>
+			<cog_pos>0</cog_pos>
+		  </group></componentgroups>
+</phenotype>

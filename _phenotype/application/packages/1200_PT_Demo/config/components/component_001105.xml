@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>##!PT_VERSION!##</ptversion>
+		<ptsubversion>##!BUILD_NO!##</ptsubversion>	
+		<com_id>1105</com_id>
+		<com_bez>Table</com_bez>		
+		<com_rubrik>Demonstration</com_rubrik>
+		<com_description></com_description>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Table
+ *
+ * This component shows you how to totally override the usual component behaviour by not only 
+ * implementing -&#62;initform() , but also using form_wrap and adapting -&#62;update()
+ * 
+ * @package phenotype
+ * @subpackage application
+ *&#47; 
+class PhenotypeComponent_1105 extends PhenotypeComponent
+{
+	var $tool_type = 1105;
+	var $bez = &#34;Table&#34;;
+
+	public function setDefaultProperties()
+	{
+		$this-&#62;set(&#34;_revision&#34;,1);
+		$this-&#62;set(&#34;table_count_x&#34;,3);
+		$this-&#62;set(&#34;table_count_y&#34;,3);
+		$this-&#62;set(&#34;table_width&#34;,500);
+	}	
+	
+	public function initForm($context)
+  	{
+		&#47;&#47; Customize input form with form_xy-methods
+
+		global $myDB;
+		
+		$this-&#62;form_textfield(&#34;Headline&#34;,&#34;headline&#34;,300);
+		$this-&#62;form_wrap(&#34;displayEditTable&#34;);
+		$this-&#62;form_textfield(&#34;Width (Pixel)&#34;,&#34;table_width&#34;);
+	}
+	
+	public function displayEditTable()
+	{
+		$formname = $this-&#62;formid.&#34;table&#34;;
+		$max_columns =10;
+		
+		?&#62;&#60;br&#47;&#62;&#60;br&#47;&#62;
+		&#60;table width=&#34;408&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;0&#34; class=&#34;tableBausteineBackground&#34;&#62; 
+        &#60;tr&#62; 
+        &#60;?php 
+        $x = ceil(73&#47;$this-&#62;get(&#34;table_count_x&#34;));
+        for ($j=1;$j&#60;=$this-&#62;get(&#34;table_count_x&#34;);$j++)
+        {
+        ?&#62;         
+        &#60;td width=&#34;&#60;?php echo $x ?&#62;%&#34;&#62;&#60;?php if ($this-&#62;get(&#34;table_count_x&#34;)&#62;1){ ?&#62;&#60;input type=&#34;image&#34; src=&#34;img&#47;b_minus.gif&#34; alt=&#34;Remove column&#34; width=&#34;18&#34; height=&#34;18&#34; border=&#34;0&#34; name=&#34;&#60;?php echo $formname?&#62;_minus_c&#60;?php echo $j ?&#62;&#34;&#62;&#60;?php } ?&#62;&#60;?php if($this-&#62;get(&#34;table_count_x&#34;)&#60;$max_columns){ ?&#62;&#60;input type=&#34;image&#34; src=&#34;img&#47;b_plus.gif&#34; alt=&#34;Add Column&#34; width=&#34;18&#34; height=&#34;18&#34; border=&#34;0&#34; name=&#34;&#60;?php echo $formname  ?&#62;_plus_c&#60;?php echo $j ?&#62;&#34;&#62;&#60;?php } ?&#62;&#60;&#47;td&#62;
+        &#60;?php 
+        }
+        ?&#62; 
+        &#60;td width=&#34;7%&#34; align=&#34;right&#34; nowrap&#62;&#38;nbsp;&#60;&#47;td&#62; 
+        &#60;&#47;tr&#62; 
+        &#60;?php 
+        for ($i=1;$i&#60;=$this-&#62;get(&#34;table_count_y&#34;);$i++)
+        {
+        ?&#62; 
+        &#60;tr&#62; 
+        &#60;?php 
+        for ($j=1;$j&#60;=$this-&#62;get(&#34;table_count_x&#34;);$j++)
+        {
+        ?&#62; 
+        &#60;td&#62;&#60;textarea name=&#34;&#60;?php echo $formname ?&#62;_content_x&#60;?php echo $j ?&#62;_y&#60;?php echo $i ?&#62;&#34; class=&#34;input&#34; style=&#34;width: 90%;height: 55px&#34;&#62;&#60;?php echo $this-&#62;getH(&#34;table_content_x&#34;.$j.&#34;_y&#34;.$i) ?&#62;&#60;&#47;textarea&#62;&#60;&#47;td&#62; 
+        &#60;?php 
+        }
+        ?&#62; 
+        &#60;td  nowrap&#62; 
+        &#60;?php if ($this-&#62;get(&#34;table_count_y&#34;)&#62;1){ ?&#62; 
+        &#60;input type=&#34;image&#34; src=&#34;img&#47;b_minus.gif&#34; alt=&#34;Remove Row&#34; width=&#34;18&#34; height=&#34;18&#34; border=&#34;0&#34; name=&#34;&#60;?php echo $formname  ?&#62;_minus_r&#60;?php echo $i ?&#62;&#34;&#62;&#60;?php } ?&#62;&#60;input type=&#34;image&#34; src=&#34;img&#47;b_plus.gif&#34; alt=&#34;Add Row&#34; width=&#34;18&#34; height=&#34;18&#34; border=&#34;0&#34; name=&#34;&#60;?php echo $formname  ?&#62;_plus_r&#60;?php echo $i ?&#62;&#34;&#62; 
+        &#60;&#47;td&#62; 
+        
+        &#60;&#47;tr&#62; 
+        &#60;?php 
+        }
+        ?&#62; 
+        &#60;&#47;table&#62;&#60;br&#47;&#62; 
+        &#60;?php
+	}
+	
+	
+	public function update($context)
+	{
+		parent::update($context);
+		
+		global $myRequest;
+
+		$formname = $this-&#62;formid.&#34;table&#34;;
+		
+		$count_y = $this-&#62;get(&#34;table_count_y&#34;);
+		$count_x = $this-&#62;get(&#34;table_count_x&#34;);
+		$put_y=1;
+		for ($i=1;$i&#60;=$count_y;$i++)
+		{
+			$put_x = 1;
+			for ($j=1;$j&#60;=$count_x;$j++)
+			{
+				$fname = &#34;table_content_x&#34; . $j . &#34;_y&#34; . $i;
+				$this-&#62;set(&#34;table_content_x&#34; . $put_x . &#34;_y&#34; . $put_y,$this-&#62;fget($fname));
+				$put_x++;
+
+			}
+			$put_y++;
+
+			&#47;&#47; New row ?
+			$fname = $formname . &#34;_plus_r&#34; . $i . &#34;_x&#34;;
+			if ($myRequest-&#62;check($fname))
+			{
+				$this-&#62;set(&#34;table_count_y&#34;,$count_y+1);
+				for ($k=1;$k&#60;=$count_x;$k++)
+				{
+					$this-&#62;set(&#34;table_content_x&#34; . $k . &#34;_y&#34; . $put_y,&#34;&#34;);
+				}
+				$put_y++;
+			}
+			&#47;&#47; -- New row ?
+
+			&#47;&#47; Deletion of row ?
+			$fname = $formname . &#34;_minus_r&#34; . $i . &#34;_x&#34;;
+			if ($myRequest-&#62;check($fname))
+			{
+				$this-&#62;set(&#34;table_count_y&#34;,$count_y-1);
+				$put_y--;
+				for ($k=1;$k&#60;=$count_x;$k++)
+				{
+					$this-&#62;clear(&#34;table_content_x&#34;.$k.&#34;_y&#34;.$count_y);
+				}
+			}
+			&#47;&#47; -- Deletion of row ?
+		}
+
+		for ($i=1;$i&#60;=$count_x;$i++)
+		{
+			&#47;&#47; New column ?
+			$fname = $formname . &#34;_plus_c&#34; . $i .&#34;_x&#34;;
+			if ($myRequest-&#62;check($fname))
+			{
+				for ($k=$count_x;$k&#62;$i;$k--)
+				{
+					for ($l=1;$l&#60;=$count_y;$l++)
+					{
+						$s = $this-&#62;get (&#34;table_content_x&#34; . $k . &#34;_y&#34; .$l);
+						$this-&#62;set(&#34;table_content_x&#34; . ($k+1) . &#34;_y&#34; . $l,$s);
+					}
+				}
+				for ($l=1;$l&#60;=$count_y;$l++)
+				{
+					$this-&#62;set(&#34;table_content_x&#34; . ($i+1) . &#34;_y&#34; . $l,&#34;&#34;);
+				}
+				$this-&#62;set(&#34;table_count_x&#34;,$count_x+1);
+			}
+			&#47;&#47; -- New column ?
+
+			&#47;&#47; Deletion of column
+			$fname = $formname . &#34;_minus_c&#34; . $i . &#34;_x&#34;;
+			if ($myRequest-&#62;check($fname))
+			{
+				for ($k=$i;$k&#60;$count_x;$k++)
+				{
+					for ($l=1;$l&#60;=$count_y;$l++)
+					{
+						$s = $this-&#62;get (&#34;table_content_x&#34; . ($k+1) . &#34;_y&#34; .$l);
+						$this-&#62;set(&#34;table_content_x&#34; . ($k) . &#34;_y&#34; . $l,$s);
+					}
+				}
+				$this-&#62;set(&#34;table_count_x&#34;,$count_x-1);
+				for ($l=1;$l&#60;=$count_y;$l++)
+				{
+					$this-&#62;clear(&#34;table_content_x&#34;.$count_x.&#34;_y&#34;.$l);
+				}
+				
+			}
+			&#47;&#47; -- Deletion of column ?
+		}
+	}
+
+
+	function render($context)
+	{
+		global $myPT;
+		$myPT-&#62;startBuffer();
+		?&#62;
+        &#60;div class=&#34;table&#34;&#62;
+        &#60;?php
+        if ($this-&#62;get(&#34;headline&#34;)!=&#34;&#34;)
+        {
+       		?&#62;&#60;h1&#62;&#60;?php echo $this-&#62;getH(&#34;headline&#34;) ?&#62;&#60;&#47;h1&#62;&#60;?php
+        }
+        ?&#62;
+        &#60;table width=&#34;&#60;?php echo $this-&#62;getI(&#34;width&#34;) ?&#62;&#34; border=&#34;0&#34; cellpadding=&#34;0&#34; cellspacing=&#34;1&#34; &#62; 
+        &#60;?php 
+        for ($i=1;$i&#60;=$this-&#62;get(&#34;table_count_y&#34;);$i++)
+        {
+        ?&#62;
+        &#60;tr&#62; 
+        &#60;?php 
+        for ($j=1;$j&#60;=$this-&#62;get(&#34;table_count_x&#34;);$j++)
+        {
+
+        	$td1 = &#39;&#60;td&#62;&#39;;
+        	$td2 = &#39;&#60;&#47;td&#62;&#39;;
+
+
+        	if ($i==1)
+        	{
+        		$td1 = &#39;&#60;th&#62;&#39;;
+        		$td2 = &#39;&#60;&#47;th&#62;&#39;;
+        	}
+        ?&#62; 
+        &#60;?php echo $td1 ?&#62;&#60;?php echo $this-&#62;getH(&#34;table_content_x&#34;.$j.&#34;_y&#34;.$i); ?&#62;&#60;?php echo $td2 ?&#62;
+        &#60;?php 
+        }
+        ?&#62; 
+        &#60;&#47;tr&#62; 
+        &#60;?php         
+        }
+        ?&#62; 
+        &#60;&#47;table&#62;
+        &#60;&#47;div&#62;
+        &#60;?php
+
+        $html = $myPT-&#62;stopBuffer();
+        return $html;
+	}
+
+}
+?&#62;</script>
+	<templates>
+   	</templates>
+	<componentgroups><group>
+			<cog_id>1</cog_id>
+			<cog_bez>Default</cog_bez>
+			<cog_description># default components</cog_description>
+			<cog_pos>0</cog_pos>
+		  </group></componentgroups>
+</phenotype>

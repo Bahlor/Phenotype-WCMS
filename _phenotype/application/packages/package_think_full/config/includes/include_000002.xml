@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phenotype>
+	<meta>
+		<ptversion>3.0</ptversion>
+		<ptsubversion>r416</ptsubversion>
+		<inc_id>2</inc_id>
+		<inc_bez>Slider</inc_bez>		
+		<inc_rubrik>Media</inc_rubrik>
+		<inc_description></inc_description>
+		<inc_usage_layout>1</inc_usage_layout>
+		<inc_usage_includecomponent>0</inc_usage_includecomponent>
+		<inc_usage_page>0</inc_usage_page>
+	</meta>
+	<script>&#60;?php
+&#47;**
+ * Slider
+ *
+ * @package phenotype
+ * @subpackage application
+ *&#47;
+class PhenotypeInclude_2 extends PhenotypeInclude
+{
+  
+  public $id = 2;
+
+  public function display()
+  {
+    global $myDB, $myPage, $myRequest;
+    
+    $gal = 1000;
+    if($myPage-&#62;get(&#39;slider&#39;) &#62; 0) { $gal = (int)$myPage-&#62;get(&#39;slider&#39;); }
+	$co		=	new PhenotypeContent_1($gal);
+	$images	=	$co-&#62;get(&#39;precalc&#39;);
+
+	&#47;&#47; Initialize template access (=&#62;$mySmarty) 
+	eval ($this-&#62;initRendering());	
+	$mySmarty-&#62;assign(&#39;images&#39;,$images);
+	$mySmarty-&#62;display($TPL_1);
+  }
+
+}
+?&#62;</script>
+	<templates>
+<template access="TPL_1">{foreach from=$images item=&#34;i&#34;}
+&#60;img src=&#34;{$i.6}&#34; width=&#34;940&#34; alt=&#34;&#34; &#47;&#62;
+{&#47;foreach}</template>
+   	</templates>
+</phenotype>
